@@ -4,18 +4,19 @@ var path = require('path');
 var metadata = {
   baseUrl: '/',
   host: 'localhost',
-  port: 3000
+  port: 9000
 };
 
 module.exports = {
   metadata: metadata,
+  devtool: 'source-map',
   entry: {
     app: './src/app.ts',
     vendor: './src/vendor.ts'
   },
   output: {
-    filename: '[name].bundle.js',
-    path: './dist'
+    path: './dist',
+    filename: '[name].bundle.js'
   },
   plugins: [
     new CommonsChunkPlugin('vendor', 'vendor.bundle.js')
