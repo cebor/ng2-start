@@ -19,7 +19,7 @@ module.exports = {
     filename: '[name].bundle.js'
   },
   plugins: [
-    new CommonsChunkPlugin('vendor', 'vendor.bundle.js')
+    new CommonsChunkPlugin({name: 'vendor'})
   ],
   resolve: {
     extensions: ['', '.ts', '.js']
