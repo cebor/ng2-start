@@ -3,14 +3,14 @@
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "rootDir": ".",
     "outDir": "dist",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitAny": false,
     "sourceMap": true
   },
-  "exclude": [
-    "node_modules"
+  "files": [
+    "src/app.ts",
+    "src/vendor.ts"
   ]
 }

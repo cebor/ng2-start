@@ -3,8 +3,12 @@ import {Component} from 'angular2/core';
 
 @Component({
     selector: 'app',
-    template: 'Hello World!'
+    template: '<span>Hello World!</span>'
 })
-class App {}
+class App {
+    constructor() {
+        console.log('App loaded!!');
+    }
+}
 
 bootstrap(App);

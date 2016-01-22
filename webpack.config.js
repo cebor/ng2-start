@@ -1,40 +1,38 @@
-var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+var webpack = require('webpack');
 var path = require('path');
 
-var metadata = {
-  baseUrl: '/',
-  host: 'localhost',
-  port: 9000
-};
-
 module.exports = {
-  metadata: metadata,
-  devtool: 'source-map',
   entry: {
     app: './src/app.ts',
     vendor: './src/vendor.ts'
   },
   output: {
     path: './dist',
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
+    sourceMapFilename: '[name].map',
+    chunkFilename: '[id].chunk.js'
   },
   plugins: [
-    new CommonsChunkPlugin({name: 'vendor'})
+    new webpack.optimize.OccurenceOrderPlugin(true),
+    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', minChunks: Infinity})
   ],
   resolve: {
     extensions: ['', '.ts', '.js']
   },
   module: {
     loaders: [
-      { test: /\.ts$/, loader: 'ts-loader' },
+      {
+        test: /\.ts$/,
+        loader: 'ts-loader',
+        exclude: [/\.(spec|e2e)\.ts$/, /node_modules/]
+      }
     ],
     noParse: [
       path.join(__dirname, 'node_modules', 'angular2', 'bundles')
     ]
   },
   devServer: {
-    port: metadata.port,
-    host: metadata.host,
+    port: 9000,
     historyApiFallback: true
   }
 };
