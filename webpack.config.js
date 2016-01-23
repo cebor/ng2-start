@@ -2,9 +2,11 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
+  devtool: 'source-map',
+  debug: true,
   entry: {
-    app: './src/app.ts',
-    vendor: './src/vendor.ts'
+    vendor: './src/vendor.ts',
+    app: './src/app.ts'
   },
   output: {
     path: './dist',
@@ -17,14 +19,14 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({name: 'vendor', minChunks: Infinity})
   ],
   resolve: {
-    extensions: ['', '.ts', '.js']
+    extensions: ['', '.ts', '.tsx', '.js']
   },
   module: {
     loaders: [
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         loader: 'ts-loader',
-        exclude: [/\.(spec|e2e)\.ts$/, /node_modules/]
+        exclude: [/\.(spec|e2e)\.ts$/]
       }
     ],
     noParse: [
