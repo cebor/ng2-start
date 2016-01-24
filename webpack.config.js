@@ -6,7 +6,7 @@ module.exports = {
   debug: true,
   entry: {
     vendor: './src/vendor.ts',
-    app: './src/app.ts'
+    main: './src/main.ts'
   },
   output: {
     path: './dist',
