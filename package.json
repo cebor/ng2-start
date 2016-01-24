@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --inline --open --display-error-details --display-cached --content-base src",
+    "start": "webpack-dev-server --progress --colors --inline --open --display-error-details --display-cached",
     "build:dev": "webpack --progress --colors --display-error-details --display-cached",
     "build": "npm run build:dev",
     "test": "echo \"Error: no test specified\" && exit 1"
