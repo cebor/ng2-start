@@ -26,7 +26,7 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
-        exclude: [/\.(spec|e2e)\.ts$/]
+        exclude: [/\.(spec|e2e)\.tsx?$/]
       }
     ],
     noParse: [
