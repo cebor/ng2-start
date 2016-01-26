@@ -16,7 +16,10 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true),
-    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', minChunks: Infinity})
+    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', minChunks: Infinity}),
+    new webpack.DefinePlugin({
+      MODE: JSON.stringify('dev')
+    })
   ],
   resolve: {
     extensions: ['', '.ts', '.tsx', '.js']
