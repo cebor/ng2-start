@@ -15,8 +15,8 @@ Requirements
 Setup environment
 
 ```bash
-# cd into ng-start
-cd ng-start
+# cd into ng2-start
+cd ng2-start
 
 # Install dependencies
 npm install

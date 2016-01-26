@@ -5,7 +5,7 @@ import {Component} from 'angular2/core';
     template: '<span>Hello World!</span>'
 })
 export class App {
-    constructor() {
+    ngOnInit() {
         console.log('App loaded!!');
     }
 }
