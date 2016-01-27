@@ -2,7 +2,8 @@ import {Component} from 'angular2/core';
 
 @Component({
     selector: 'app',
-    template: '<span>Hello World!</span>'
+    styles: [ require('./app.less') ],
+    template: '<span class="royalblue">Hello World!</span>'
 })
 export class App {
     ngOnInit() {

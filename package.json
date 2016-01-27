@@ -1,5 +1,5 @@
 {
-  "name": "angular2-seed",
+  "name": "ng2-start",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -21,6 +21,9 @@
     "zone.js": "^0.5.10"
   },
   "devDependencies": {
+    "less": "^2.5.3",
+    "less-loader": "^2.2.2",
+    "raw-loader": "^0.5.1",
     "ts-loader": "^0.8.0",
     "typescript": "^1.7.5",
     "webpack": "^1.12.12",
