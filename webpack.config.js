@@ -26,11 +26,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      {
-        test: /\.tsx?$/,
-        loader: 'ts-loader',
-        exclude: [/\.(spec|e2e)\.tsx?$/]
-      }
+      { test: /\.tsx?$/, loader: 'ts-loader', exclude: [/\.(spec|e2e)\.tsx?$/] }
     ],
     noParse: [
       path.join(__dirname, 'node_modules', 'angular2', 'bundles')
