@@ -14,13 +14,6 @@ module.exports = {
     sourceMapFilename: '[name].map',
     chunkFilename: '[id].chunk.js'
   },
-  plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(true),
-    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', minChunks: Infinity}),
-    new webpack.DefinePlugin({
-      MODE: JSON.stringify('dev')
-    })
-  ],
   resolve: {
     extensions: ['', '.ts', '.tsx', '.js']
   },
@@ -33,6 +26,13 @@ module.exports = {
       path.join(__dirname, 'node_modules', 'angular2', 'bundles')
     ]
   },
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(true),
+    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', minChunks: Infinity}),
+    new webpack.DefinePlugin({
+      MODE: JSON.stringify('dev')
+    })
+  ],
   devServer: {
     host: 'localhost',
     port: 9000,
