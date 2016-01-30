@@ -9,5 +9,8 @@
   "exclude": [
     "node_modules",
     "typings"
-  ]
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": { "rewriteTsconfig": false }
 }
