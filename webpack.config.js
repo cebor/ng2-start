@@ -1,5 +1,6 @@
-var webpack = require('webpack');
 var path = require('path');
+var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: 'source-map',
@@ -20,7 +21,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.tsx?$/, loader: 'ts-loader', exclude: [/\.(spec|e2e)\.tsx?$/] },
-      { test: /\.less$/, loader: 'raw-loader!less-loader' }
+      { test: /\.less$/, loader: 'raw-loader!postcss-loader!less-loader' }
     ],
     noParse: [
       path.join(__dirname, 'node_modules', 'angular2', 'bundles')
@@ -38,5 +39,9 @@ module.exports = {
     port: 9000,
     contentBase: 'src/',
     historyApiFallback: true
+  },
+  // thirdparty loader-configs
+  postcss: function () {
+    return [autoprefixer];
   }
 };

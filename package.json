@@ -21,8 +21,10 @@
     "zone.js": "0.5.10"
   },
   "devDependencies": {
+    "autoprefixer": "^6.3.1",
     "less": "^2.5.3",
     "less-loader": "^2.2.2",
+    "postcss-loader": "^0.8.0",
     "raw-loader": "^0.5.1",
     "ts-loader": "^0.8.0",
     "typescript": "^1.7.5",
