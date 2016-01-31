@@ -21,6 +21,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.tsx?$/, loader: 'ts-loader', exclude: [/\.(spec|e2e)\.tsx?$/] },
+      { test: /\.html$/, loader: 'raw-loader' },
       { test: /\.less$/, loader: 'raw-loader!postcss-loader!less-loader' }
     ],
     noParse: [

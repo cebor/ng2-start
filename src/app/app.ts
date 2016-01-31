@@ -8,14 +8,7 @@ import {About} from "./about/about";
     selector: 'app',
     directives: [ ROUTER_DIRECTIVES ],
     styles: [ require('./app.less') ],
-    template: `
-      <h1 class="royalblue">ng2-start</h1>
-      <br>
-      <a [routerLink]=" ['Home'] ">Home</a>
-      <a [routerLink]=" ['About'] ">About</a>
-      <br>
-      <router-outlet></router-outlet>
-    `
+    template: require('./app.html')
 })
 @RouteConfig([
   { path: '/', component: Home, name: 'Home' },
