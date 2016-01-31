@@ -43,6 +43,6 @@ module.exports = {
   },
   // thirdparty loader-configs
   postcss: function () {
-    return [autoprefixer];
+    return [ autoprefixer ];
   }
 };

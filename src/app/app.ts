@@ -5,13 +5,13 @@ import {Home} from './home/home';
 import {About} from './about/about';
 
 @Component({
-    selector: 'app',
-    directives: [ ROUTER_DIRECTIVES ],
-    styles: [ require('./app.less') ],
-    template: require('./app.html')
+  selector: 'app',
+  directives: [ ROUTER_DIRECTIVES ],
+  styles: [ require('./app.less') ],
+  template: require('./app.html')
 })
 @RouteConfig([
-  { path: '/', component: Home, name: 'Home' },
+  { path: '/home', component: Home, name: 'Home', useAsDefault: true },
   { path: '/about', component: About, name: 'About' },
   { path: '/**', redirectTo: ['Home'] }
 ])

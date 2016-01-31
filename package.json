@@ -1,13 +1,13 @@
 {
   "name": "ng2-start",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "npm run serve:dev",
-    "serve:dev": "webpack-dev-server --progress --colors --display-error-details --display-cached --inline --open",
-    "build:dev": "webpack --progress --colors --display-error-details --display-cached",
+    "start": "npm run serve",
     "serve": "npm run serve:dev",
     "build": "npm run build:dev",
+    "serve:dev": "webpack-dev-server --progress --colors --display-error-details --display-cached --inline --open",
+    "build:dev": "webpack --progress --colors --display-error-details --display-cached",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Felix Itzenplitz",

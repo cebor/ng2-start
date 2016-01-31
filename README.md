@@ -25,7 +25,7 @@ npm install
 Run and Build
 ```bash
 # Run
-npm run serve
+npm start
 
 # Build
 npm run build
