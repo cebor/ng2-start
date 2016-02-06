@@ -5,8 +5,15 @@ module.exports = {
   devtool: 'source-map',
   debug: true,
   entry: {
-    vendor: './src/vendor.ts',
-    main: './src/main.ts'
+    main: './src/main.ts',
+    vendor: [
+      'angular2/bundles/angular2-polyfills',
+      'angular2/platform/browser',
+      'angular2/core',
+      'angular2/common',
+      'angular2/router',
+      'angular2/http'
+    ]
   },
   output: {
     path: './dist',
