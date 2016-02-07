@@ -1,3 +1,4 @@
+var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 
@@ -29,7 +30,8 @@ module.exports = {
       { test: /\.tsx?$/, loader: 'ts-loader', exclude: [/\.(spec|e2e)\.tsx?$/] },
       { test: /\.html$/, loader: 'raw-loader' },
       { test: /\.less$/, loader: 'raw-loader!postcss-loader!less-loader' }
-    ]
+    ],
+    noParse: [ path.join(__dirname, 'node_modules', 'angular2', 'bundles') ]
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true),
