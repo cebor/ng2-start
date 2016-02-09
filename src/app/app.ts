@@ -16,7 +16,7 @@ import {About} from './about/about';
   { path: '/**', redirectTo: ['Home'] }
 ])
 export class App {
-    ngOnInit() {
-        console.log('App loaded!!');
-    }
+  ngOnInit() {
+      console.log('App loaded!!');
+  }
 }
