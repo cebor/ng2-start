@@ -8,22 +8,30 @@
     "build": "npm run build:dev",
     "serve:dev": "webpack-dev-server --progress --colors --display-error-details --display-cached --inline --open",
     "build:dev": "webpack --progress --colors --display-error-details --display-cached",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typings": "typings",
+    "typings-install": "typings install",
+    "postinstall": "npm run typings-install"
   },
   "author": "Felix Itzenplitz",
   "license": "MIT",
   "dependencies": {
-    "angular2": "^2.0.0-beta.3",
-    "rxjs": "5.0.0-beta.0"
+    "angular2": "^2.0.0-beta.6",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "zone.js": "0.5.14"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.1",
+    "autoprefixer": "^6.3.2",
     "less": "^2.6.0",
     "less-loader": "^2.2.2",
     "postcss-loader": "^0.8.0",
     "raw-loader": "^0.5.1",
     "ts-loader": "^0.8.1",
     "typescript": "^1.7.5",
+    "typings": "^0.6.8",
     "webpack": "^1.12.13",
     "webpack-dev-server": "^1.14.1"
   }
