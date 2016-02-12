@@ -9,25 +9,24 @@
     "serve:dev": "webpack-dev-server --progress --colors --display-error-details --display-cached --inline --open",
     "build:dev": "webpack --progress --colors --display-error-details --display-cached",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "typings": "typings",
     "typings-install": "typings install",
     "postinstall": "npm run typings-install"
   },
   "author": "Felix Itzenplitz",
   "license": "MIT",
   "dependencies": {
-    "angular2": "^2.0.0-beta.6",
+    "angular2": "^2.0.0-beta.7",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
     "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.0",
-    "zone.js": "0.5.14"
+    "rxjs": "5.0.0-beta.2",
+    "zone.js": "0.5.15"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.2",
+    "autoprefixer": "^6.3.3",
     "less": "^2.6.0",
     "less-loader": "^2.2.2",
-    "postcss-loader": "^0.8.0",
+    "postcss-loader": "^0.8.1",
     "raw-loader": "^0.5.1",
     "ts-loader": "^0.8.1",
     "typescript": "^1.7.5",
