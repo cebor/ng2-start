@@ -24,13 +24,13 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.3.3",
-    "less": "^2.6.0",
+    "less": "^2.6.1",
     "less-loader": "^2.2.2",
     "postcss-loader": "^0.8.1",
     "raw-loader": "^0.5.1",
     "ts-loader": "^0.8.1",
     "typescript": "^1.8.7",
-    "typings": "^0.6.9",
+    "typings": "^0.6.10",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   }
