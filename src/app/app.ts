@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {Home} from './home/home';
@@ -15,7 +15,7 @@ import {About} from './about/about';
   { path: '/about', component: About, name: 'About' },
   { path: '/**', redirectTo: ['Home'] }
 ])
-export class App {
+export class App implements OnInit {
   ngOnInit() {
       console.log('App loaded!!');
   }
