@@ -8,9 +8,8 @@
     "build": "npm run build:dev",
     "serve:dev": "webpack-dev-server --progress --colors --display-error-details --display-cached --inline --open",
     "build:dev": "webpack --progress --colors --display-error-details --display-cached",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "typings-install": "typings install",
-    "postinstall": "npm run typings-install"
+    "typings": "typings",
+    "postinstall": "typings install"
   },
   "author": "Felix Itzenplitz",
   "license": "MIT",
