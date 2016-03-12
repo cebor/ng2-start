@@ -1,7 +1,8 @@
 {
   "name": "ng2-start",
-  "version": "0.0.1",
   "private": true,
+  "author": "Felix Itzenplitz",
+  "license": "MIT",
   "scripts": {
     "start": "npm run serve",
     "serve": "npm run serve:dev",
@@ -11,8 +12,6 @@
     "typings": "typings",
     "postinstall": "typings install"
   },
-  "author": "Felix Itzenplitz",
-  "license": "MIT",
   "dependencies": {
     "angular2": "^2.0.0-beta.9",
     "es6-promise": "^3.0.2",
