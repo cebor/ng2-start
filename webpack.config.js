@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'cheap-module-eval-source-map',
   debug: true,
   entry: {
     main: './src/main.ts',
@@ -23,6 +23,7 @@ module.exports = {
     chunkFilename: '[id].chunk.js'
   },
   resolve: {
+    root: [ path.join(__dirname, 'src') ],
     extensions: ['', '.ts', '.tsx', '.js']
   },
   module: {
