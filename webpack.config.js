@@ -3,17 +3,19 @@ var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'source-map',
   debug: true,
   entry: {
     main: './src/main.ts',
     vendor: [
+      'es6-shim',
       'angular2/bundles/angular2-polyfills',
       'angular2/platform/browser',
       'angular2/core',
       'angular2/common',
       'angular2/router',
-      'angular2/http'
+      'angular2/http',
+      'rxjs/Rx'
     ]
   },
   output: {
@@ -24,11 +26,11 @@ module.exports = {
   },
   resolve: {
     root: [ path.join(__dirname, 'src') ],
-    extensions: ['', '.ts', '.tsx', '.js']
+    extensions: ['', '.ts', '.js']
   },
   module: {
     loaders: [
-      { test: /\.tsx?$/, loader: 'ts-loader', exclude: [/\.(spec|e2e)\.tsx?$/] },
+      { test: /\.ts$/, loader: 'ts-loader', exclude: [/\.(spec|e2e)\.ts$/] },
       { test: /\.html$/, loader: 'raw-loader' },
       { test: /\.less$/, loader: 'raw-loader!postcss-loader!less-loader' }
     ],
