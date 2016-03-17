@@ -6,7 +6,6 @@ module.exports = {
   devtool: 'source-map',
   debug: true,
   entry: {
-    main: './src/main.ts',
     vendor: [
       'es6-shim',
       'angular2/bundles/angular2-polyfills',
@@ -16,7 +15,8 @@ module.exports = {
       'angular2/router',
       'angular2/http',
       'rxjs/Rx'
-    ]
+    ],
+    main: './src/main.ts'
   },
   output: {
     path: './dist',
