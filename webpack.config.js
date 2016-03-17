@@ -6,9 +6,14 @@ module.exports = {
   devtool: 'source-map',
   debug: true,
   entry: {
+    polyfills: [
+      //'es6-shim',
+      //'es6-promise',
+      'reflect-metadata',
+      'zone.js',
+      'zone.js/dist/long-stack-trace-zone'
+    ],
     vendor: [
-      'es6-shim',
-      'angular2/bundles/angular2-polyfills',
       'angular2/platform/browser',
       'angular2/core',
       'angular2/common',
@@ -38,7 +43,7 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true),
-    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', minChunks: Infinity}),
+    new webpack.optimize.CommonsChunkPlugin({name: ['vendor', 'polyfills'], minChunks: Infinity}),
     new webpack.DefinePlugin({
       MODE: JSON.stringify('dev')
     })
