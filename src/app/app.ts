@@ -12,8 +12,7 @@ import {About} from './about/about';
 })
 @RouteConfig([
   { path: '/home', component: Home, name: 'Home', useAsDefault: true },
-  { path: '/about', component: About, name: 'About' },
-  { path: '/**', redirectTo: ['Home'] }
+  { path: '/about', component: About, name: 'About' }
 ])
 export class App implements OnInit {
   ngOnInit() {
