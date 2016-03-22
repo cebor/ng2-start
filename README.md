@@ -22,9 +22,9 @@ cd ng2-start
 npm install
 ```
 
-Run and Build
+Serve and Build
 ```bash
-# Run
+# Start dev server at http://localhost:9000
 npm start
 
 # Build
