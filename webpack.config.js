@@ -8,7 +8,6 @@ module.exports = {
   entry: {
     polyfills: [
       //'es6-shim',
-      //'es6-promise',
       'reflect-metadata',
       'zone.js',
       'zone.js/dist/long-stack-trace-zone'
