@@ -9,8 +9,8 @@
     "build": "npm run build:dev",
     "serve:dev": "./node_modules/.bin/webpack-dev-server --progress --colors --display-error-details --display-cached --inline --open",
     "build:dev": "./node_modules/.bin/webpack --progress --colors --display-error-details --display-cached",
-    "typings": "./node_modules/.bin/typings",
-    "postinstall": "./node_modules/.bin/typings install"
+    "typings": "typings",
+    "postinstall": "typings install"
   },
   "dependencies": {
     "angular2": "^2.0.0-beta.12",
