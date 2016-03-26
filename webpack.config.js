@@ -38,7 +38,10 @@ module.exports = {
       { test: /\.html$/, loader: 'raw-loader' },
       { test: /\.less$/, loader: 'raw-loader!postcss-loader!less-loader' }
     ],
-    noParse: [ path.join(__dirname, 'node_modules', 'angular2', 'bundles') ]
+    noParse: [
+      path.join(__dirname, 'node_modules', 'zone.js', 'dist'),
+      path.join(__dirname, 'node_modules', 'angular2', 'bundles')
+    ]
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true),
