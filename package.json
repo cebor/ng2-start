@@ -22,7 +22,7 @@
   "devDependencies": {
     "autoprefixer": "^6.3.4",
     "less": "^2.6.1",
-    "less-loader": "^2.2.2",
+    "less-loader": "^2.2.3",
     "postcss-loader": "^0.8.2",
     "raw-loader": "^0.5.1",
     "ts-loader": "^0.8.1",
