@@ -1,8 +1,8 @@
 import {Component, OnInit} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
-import {Home} from './home/home';
-import {About} from './about/about';
+import {HomeComponent} from './home/home';
+import {AboutComponent} from './about/about';
 
 @Component({
   selector: 'app',
@@ -11,8 +11,8 @@ import {About} from './about/about';
   template: require('./app.html')
 })
 @RouteConfig([
-  { path: '/home', component: Home, name: 'Home', useAsDefault: true },
-  { path: '/about', component: About, name: 'About' }
+  { path: '/home', component: HomeComponent, name: 'Home', useAsDefault: true },
+  { path: '/about', component: AboutComponent, name: 'About' }
 ])
 export class App implements OnInit {
   ngOnInit() {

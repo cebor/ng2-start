@@ -4,4 +4,4 @@ import {Component} from 'angular2/core';
   selector: 'home',
   template: `This is the Home View!`
 })
-export class Home {}
+export class HomeComponent {}
