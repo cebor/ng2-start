@@ -10,6 +10,7 @@
     "build": "npm run build:dev",
     "serve:dev": "webpack-dev-server --progress --colors --display-error-details --display-cached --inline --open",
     "build:dev": "webpack --progress --colors --display-error-details --display-cached",
+    "lint": "tslint \"src/**/*.ts\"",
     "typings": "typings",
     "postinstall": "typings install"
   },
@@ -27,9 +28,10 @@
     "postcss-loader": "^0.8.2",
     "raw-loader": "^0.5.1",
     "ts-loader": "^0.8.2",
+    "tslint": "^3.7.4",
     "typescript": "^1.8.10",
     "typings": "^0.7.11",
-    "webpack": "^1.12.15",
+    "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   }
 }

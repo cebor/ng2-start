@@ -5,7 +5,7 @@ import {ROUTER_PROVIDERS} from 'angular2/router';
 import {App} from './app/app';
 
 declare var MODE: string;
-if('prod' === MODE) {
+if ('prod' === MODE) {
   enableProdMode();
 }
 
