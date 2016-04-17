@@ -1,6 +1,6 @@
 # ng2-start
 
-This is a minimal setup to start creating an angular2 application.
+This is a minimal setup to start creating an angular2 application with webpack.
 
 ### Instructions
 
