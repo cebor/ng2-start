@@ -28,7 +28,7 @@
     "postcss-loader": "^0.8.2",
     "raw-loader": "^0.5.1",
     "ts-loader": "^0.8.2",
-    "tslint": "^3.8.0",
+    "tslint": "^3.8.1",
     "typescript": "^1.8.10",
     "typings": "^0.8.1",
     "webpack": "^1.13.0",

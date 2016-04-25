@@ -1,8 +1,8 @@
 import {Component, OnInit} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
-import {HomeComponent} from './home/home';
-import {AboutComponent} from './about/about';
+import {HomeComponent} from './home/home.component';
+import {AboutComponent} from './about/about.component';
 
 @Component({
   selector: 'app',
@@ -14,7 +14,7 @@ import {AboutComponent} from './about/about';
   { path: '/home', component: HomeComponent, name: 'Home', useAsDefault: true },
   { path: '/about', component: AboutComponent, name: 'About' }
 ])
-export class App implements OnInit {
+export class AppComponent implements OnInit {
   ngOnInit() {
       console.log('App loaded!!');
   }
