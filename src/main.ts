@@ -4,8 +4,7 @@ import {ROUTER_PROVIDERS} from 'angular2/router';
 
 import {AppComponent} from './app/app.component';
 
-declare var MODE: string;
-if ('prod' === MODE) {
+if ('prod' === ENV) {
   enableProdMode();
 }
 

@@ -8,8 +8,10 @@
     "start": "npm run serve",
     "serve": "npm run serve:dev",
     "build": "npm run build:dev",
-    "serve:dev": "webpack-dev-server --progress --colors --display-error-details --display-cached --inline --open",
-    "build:dev": "webpack --progress --colors --display-error-details --display-cached",
+    "serve:dev": "webpack-dev-server --config config/webpack.dev.js --progress --colors --display-error-details --display-cached --inline --open",
+    "build:dev": "webpack --config config/webpack.dev.js --progress --colors --display-error-details --display-cached",
+    "serve:prod": "webpack-dev-server --config config/webpack.prod.js --progress --colors --display-error-details --display-cached --inline --open",
+    "build:prod": "webpack --config config/webpack.prod.js --progress --colors --display-error-details --display-cached",
     "lint": "tslint \"src/**/*.ts\"",
     "typings": "typings",
     "postinstall": "typings install"
@@ -32,6 +34,7 @@
     "typescript": "^1.8.10",
     "typings": "^0.8.1",
     "webpack": "^1.13.0",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.12.0"
   }
 }
