@@ -29,4 +29,7 @@ npm start
 
 # Build
 npm run build
+
+# Build for production
+npm run build:prod
 ```
