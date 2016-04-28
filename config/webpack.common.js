@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     polyfills: [
+      //'es6-shim',
       'reflect-metadata',
       'zone.js',
     ],

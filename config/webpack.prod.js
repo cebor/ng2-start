@@ -6,11 +6,6 @@ const DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 
 module.exports = webpackMerge(commonConfig, {
-  entry: {
-    polyfills: [
-      'es6-shim',
-    ]
-  },
   plugins: [
     new DefinePlugin({
       ENV: JSON.stringify('prod')
