@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -34,7 +34,7 @@ module.exports = {
     loaders: [
       { test: /\.ts$/, loader: 'ts-loader', exclude: [/\.(spec|e2e)\.ts$/] },
       { test: /\.html$/, loader: 'raw-loader' },
-      { test: /\.less$/, loader: 'raw-loader!postcss-loader!less-loader' }
+      { test: /\.less$/, loaders: ['raw-loader', 'postcss-loader', 'less-loader'] }
     ],
     noParse: [
       path.join(__dirname, 'node_modules', 'zone.js', 'dist'),
@@ -44,9 +44,10 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true),
     new webpack.optimize.CommonsChunkPlugin({name: ['vendor', 'polyfills'], minChunks: Infinity}),
-    new CopyWebpackPlugin([{
-      from: './src/index.html'
-    }])
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      chunksSortMode: 'dependency' // will be remove in webpack2
+    })
   ],
   devServer: {
     host: 'localhost',
