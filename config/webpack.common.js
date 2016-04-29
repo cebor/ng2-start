@@ -46,7 +46,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({name: ['vendor', 'polyfills'], minChunks: Infinity}),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      chunksSortMode: 'dependency' // will be remove in webpack2
+      chunksSortMode: 'dependency' // will be removed in webpack2
     })
   ],
   devServer: {
