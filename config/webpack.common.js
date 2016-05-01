@@ -1,8 +1,9 @@
-const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const util = require('./util');
 
 module.exports = {
   entry: {
@@ -22,13 +23,13 @@ module.exports = {
     main: './src/main.ts'
   },
   output: {
-    path: './dist',
+    path: util.root('dist'),
     filename: '[name].bundle.js',
     sourceMapFilename: '[name].map',
     chunkFilename: '[id].chunk.js'
   },
   resolve: {
-    root: [ path.join(__dirname, 'src') ],
+    root: util.root('src'),
     extensions: ['', '.ts', '.js']
   },
   module: {
@@ -36,10 +37,6 @@ module.exports = {
       { test: /\.ts$/, loader: 'ts-loader', exclude: [/\.(spec|e2e)\.ts$/] },
       { test: /\.html$/, loader: 'raw-loader' },
       { test: /\.less$/, loaders: ['raw-loader', 'postcss-loader', 'less-loader'] }
-    ],
-    noParse: [
-      path.join(__dirname, 'node_modules', 'zone.js', 'dist'),
-      path.join(__dirname, 'node_modules', 'angular2', 'bundles')
     ]
   },
   plugins: [
