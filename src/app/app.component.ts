@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import { Component, OnInit } from '@angular/core';
+import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
-import {HomeComponent} from './home/home.component';
-import {AboutComponent} from './about/about.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 
 @Component({
   selector: 'app',
