@@ -42,10 +42,10 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true),
-    new webpack.optimize.CommonsChunkPlugin({name: ['vendor', 'polyfills'], minChunks: Infinity}),
+    new webpack.optimize.CommonsChunkPlugin({name: ['vendor', 'polyfills']}),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      chunksSortMode: 'dependency' // will be removed in webpack2
+      chunksSortMode: 'dependency'
     })
   ],
   devServer: {
