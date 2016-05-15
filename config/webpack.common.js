@@ -19,15 +19,12 @@ module.exports = {
       '@angular/http',
       '@angular/platform-browser-dynamic',
       '@angular/router-deprecated',
-      'rxjs/Rx'
+      'rxjs'
     ],
     main: './src/main.ts'
   },
   output: {
-    path: util.root('dist'),
-    filename: '[name].bundle.js',
-    sourceMapFilename: '[name].map',
-    chunkFilename: '[id].chunk.js'
+    path: util.root('dist')
   },
   resolve: {
     root: util.root('src'),

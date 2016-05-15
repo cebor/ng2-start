@@ -6,6 +6,10 @@ const DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 
 module.exports = webpackMerge(commonConfig, {
+  output: {
+    filename: '[name].[chunkhash].bundle.js',
+    chunkFilename: '[id].[chunkhash].chunk.js'
+  },
   plugins: [
     new DefinePlugin({
       ENV: JSON.stringify('prod')

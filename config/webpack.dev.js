@@ -11,6 +11,11 @@ module.exports = webpackMerge(commonConfig, {
       'zone.js/dist/long-stack-trace-zone'
     ]
   },
+  output: {
+    filename: '[name].bundle.js',
+    sourceMapFilename: '[name].map',
+    chunkFilename: '[id].chunk.js'
+  },
   plugins: [
     new DefinePlugin({
       ENV: JSON.stringify('dev')
