@@ -1,9 +1,9 @@
 {
-  "name": "ng2-start",
-  "version": false,
-  "dependencies": {},
-  "ambientDependencies": {
+  "globalDependencies": {
     "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
-    "node": "registry:dt/node#4.0.0+20160509154515"
+    "node": "registry:dt/node#6.0.0+20160514165920"
+  },
+  "resolution": {
+    "browser": "typings"
   }
 }
