@@ -19,7 +19,7 @@ module.exports = {
       '@angular/http',
       '@angular/platform-browser-dynamic',
       '@angular/router-deprecated',
-      'rxjs'
+      'rxjs/Rx'
     ],
     main: './src/main.ts'
   },
