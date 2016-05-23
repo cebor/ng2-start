@@ -8,8 +8,8 @@ const util = require('./util');
 module.exports = {
   entry: {
     polyfills: [
-      //'es6-shim',
-      'reflect-metadata',
+      'core-js/es6',
+      'core-js/es7/reflect',
       'zone.js',
     ],
     vendor: [
