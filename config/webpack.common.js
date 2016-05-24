@@ -10,7 +10,7 @@ module.exports = {
     polyfills: [
       'core-js/es6',
       'core-js/es7/reflect',
-      'zone.js',
+      'zone.js'
     ],
     vendor: [
       '@angular/common',
