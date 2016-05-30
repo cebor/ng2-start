@@ -7,8 +7,8 @@ const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 
 module.exports = webpackMerge(commonConfig, {
   output: {
-    filename: '[name].[chunkhash].bundle.js',
-    chunkFilename: '[id].[chunkhash].chunk.js'
+    filename: '[name].[chunkhash:7].bundle.js',
+    chunkFilename: '[id].[chunkhash:7].chunk.js'
   },
   plugins: [
     new DefinePlugin({
