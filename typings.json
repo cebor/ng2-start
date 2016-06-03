@@ -1,7 +1,7 @@
 {
   "globalDependencies": {
-    "core-js": "registry:dt/core-js#0.0.0+20160524134847",
-    "node": "registry:dt/node#6.0.0+20160523035754"
+    "core-js": "registry:dt/core-js#0.0.0+20160602141332",
+    "node": "registry:dt/node#6.0.0+20160602155235"
   },
   "resolution": {
     "browser": "typings"
