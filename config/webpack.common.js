@@ -34,7 +34,8 @@ module.exports = {
     loaders: [
       { test: /\.ts$/, loader: 'ts-loader', exclude: [/\.(spec|e2e)\.ts$/] },
       { test: /\.html$/, loader: 'raw-loader' },
-      { test: /\.less$/, loaders: ['raw-loader', 'postcss-loader', 'less-loader'] }
+      { test: /\.less$/, loaders: ['raw-loader', 'postcss-loader', 'less-loader'] },
+      { test: /\.scss$/, loaders: ['raw-loader', 'postcss-loader', 'sass-loader'] }
     ]
   },
   plugins: [
