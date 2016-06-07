@@ -17,7 +17,7 @@
     "build:prod": "webpack --config config/webpack.prod.js --progress --colors --display-error-details --display-cached",
     "lint": "tslint \"src/**/*.ts\"",
     "typings": "typings",
-    "typings-upgrade": "typings install -SG dt~core-js && typings install -SG dt~node",
+    "typings-upgrade": "typings ls | awk '$2 ~ /.+/ {print $2}' | xargs -I{} typings i -SG 'dt~{}'",
     "postinstall": "typings install",
     "sync": "cp -r config webpack.config.js package.json"
   },
