@@ -5,10 +5,11 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 
 @Component({
+  moduleId: module.id,
   selector: 'app',
   directives: [ ROUTER_DIRECTIVES ],
-  styles: [ require('./app.less') ],
-  template: require('./app.html')
+  styleUrls: [ './app.less' ],
+  templateUrl: './app.html'
 })
 @RouteConfig([
   { path: '/home', component: HomeComponent, name: 'Home', useAsDefault: true },
