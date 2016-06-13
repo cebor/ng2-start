@@ -16,16 +16,10 @@ module.exports = webpackMerge(commonConfig, {
     }),
     new DedupePlugin(),
     new UglifyJsPlugin({
-      beautify: false,
-      mangle: {
-        screw_ie8 : true,
-        keep_fnames: true
-      },
       compress: {
         screw_ie8: true,
         warnings: false
-      },
-      comments: false
+      }
     }),
   ]
 });
