@@ -8,8 +8,8 @@ import { AboutComponent } from './about/about.component';
   moduleId: module.id,
   selector: 'app',
   directives: [ ROUTER_DIRECTIVES ],
-  styleUrls: [ './app.less' ],
-  templateUrl: './app.html'
+  styleUrls: ['app.less'],
+  templateUrl: 'app.html'
 })
 @RouteConfig([
   { path: '/home', component: HomeComponent, name: 'Home', useAsDefault: true },
