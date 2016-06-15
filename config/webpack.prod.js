@@ -15,11 +15,6 @@ module.exports = webpackMerge(commonConfig, {
       ENV: JSON.stringify('prod')
     }),
     new DedupePlugin(),
-    new UglifyJsPlugin({
-      compress: {
-        screw_ie8: true,
-        warnings: false
-      }
-    }),
+    new UglifyJsPlugin({ compress: { warnings: false } }),
   ]
 });
