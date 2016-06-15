@@ -15,7 +15,6 @@ module.exports = {
     ],
     vendor: [
       '@angular/common',
-      '@angular/compiler',
       '@angular/core',
       '@angular/http',
       '@angular/platform-browser-dynamic',
