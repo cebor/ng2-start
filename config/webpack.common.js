@@ -18,7 +18,7 @@ module.exports = {
       '@angular/core',
       '@angular/http',
       '@angular/platform-browser-dynamic',
-      '@angular/router-deprecated',
+      '@angular/router',
       'rxjs/Rx'
     ],
     main: './src/main.ts'

@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
-
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -11,10 +8,6 @@ import { AboutComponent } from './about/about.component';
   styleUrls: ['app.less'],
   templateUrl: 'app.html'
 })
-@RouteConfig([
-  { path: '/home', component: HomeComponent, name: 'Home', useAsDefault: true },
-  { path: '/about', component: AboutComponent, name: 'About' }
-])
 export class AppComponent implements OnInit {
   ngOnInit() {
       console.log('App loaded!!');
