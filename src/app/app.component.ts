@@ -5,7 +5,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
   moduleId: module.id,
   selector: 'app',
   directives: [ ROUTER_DIRECTIVES ],
-  styleUrls: ['app.less'],
+  styleUrls: ['app.css'],
   templateUrl: 'app.html'
 })
 export class AppComponent implements OnInit {

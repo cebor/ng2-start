@@ -34,6 +34,7 @@ module.exports = {
     loaders: [
       { test: /\.ts$/, loaders: ['ts-loader', 'angular2-template-loader'], exclude: [/\.(spec|e2e)\.ts$/] },
       { test: /\.html$/, loader: 'raw-loader' },
+      { test: /\.css$/, loaders: ['raw-loader', 'postcss-loader'] },
       { test: /\.less$/, loaders: ['raw-loader', 'postcss-loader', 'less-loader'] },
       { test: /\.scss$/, loaders: ['raw-loader', 'postcss-loader', 'sass-loader'] }
     ]
