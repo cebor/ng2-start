@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
-  moduleId: module.id,
   selector: 'app',
   directives: [ ROUTER_DIRECTIVES ],
   styleUrls: ['app.css'],
