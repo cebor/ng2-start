@@ -2,9 +2,13 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
+    "types": [
+      "core-js",
+      "node"
+    ],
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "sourceMap": true
   },
   "exclude": [
@@ -12,5 +16,7 @@
   ],
   "compileOnSave": false,
   "buildOnSave": false,
-  "atom": { "rewriteTsconfig": false }
+  "atom": {
+    "rewriteTsconfig": false
+  }
 }

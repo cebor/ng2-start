@@ -16,9 +16,6 @@
     "prebuild:prod": "npm run clean",
     "build:prod": "webpack --config config/webpack.prod.js --progress --colors --display-error-details --display-cached",
     "lint": "tslint \"src/**/*.ts\"",
-    "typings": "typings",
-    "typings-upgrade": "typings ls | awk '$2 ~ /.+/ {print $2}' | xargs -I {} typings i dt~{} -SG",
-    "postinstall": "typings install",
     "sync": "cp -r config webpack.config.js package.json"
   },
   "dependencies": {
@@ -34,6 +31,8 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
+    "@types/core-js": "^0.9.27-alpha",
+    "@types/node": "^4.0.28-alpha",
     "angular2-template-loader": "^0.4.0",
     "autoprefixer": "^6.3.7",
     "html-webpack-plugin": "^2.22.0",
@@ -46,8 +45,7 @@
     "sass-loader": "^4.0.0",
     "ts-loader": "^0.8.2",
     "tslint": "^3.13.0",
-    "typescript": "^1.8.10",
-    "typings": "^1.3.1",
+    "typescript": "^2.0.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.14.0"
