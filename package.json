@@ -31,7 +31,6 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
-    "@types/core-js": "^0.9.27-alpha",
     "@types/node": "^4.0.28-alpha",
     "angular2-template-loader": "^0.4.0",
     "autoprefixer": "^6.3.7",
