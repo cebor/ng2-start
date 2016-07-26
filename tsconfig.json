@@ -11,6 +11,7 @@
     "types": [
       "node"
     ],
+    "moduleResolution": "node",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "sourceMap": true
