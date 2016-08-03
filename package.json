@@ -16,6 +16,7 @@
     "prebuild:prod": "npm run clean",
     "build:prod": "webpack --config config/webpack.prod.js --progress --colors --display-error-details --display-cached",
     "lint": "tslint \"src/**/*.ts\"",
+    "test": "npm run lint",
     "sync": "cp -r config webpack.config.js package.json"
   },
   "dependencies": {
