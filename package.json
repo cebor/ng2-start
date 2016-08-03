@@ -33,7 +33,7 @@
   "devDependencies": {
     "@types/node": "^6.0.31",
     "angular2-template-loader": "^0.4.0",
-    "autoprefixer": "^6.3.7",
+    "autoprefixer": "^6.4.0",
     "html-webpack-plugin": "^2.22.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
