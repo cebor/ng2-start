@@ -4,9 +4,7 @@
     "module": "commonjs",
     "lib": [
       "dom",
-      "es5",
-      "es2015.promise",
-      "es2015.collection"
+      "es6"
     ],
     "types": [
       "node"
