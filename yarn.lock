@@ -67,6 +67,16 @@
     magic-string "^0.22.3"
     source-map "^0.5.6"
 
+"@types/geojson@*":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-1.0.5.tgz#ef9f12277233399c7f32086818a56a84c8952f8f"
+
+"@types/highcharts@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@types/highcharts/-/highcharts-5.0.8.tgz#b415e2b68782c2da19661329d7db1035d62ba397"
+  dependencies:
+    "@types/geojson" "*"
+
 "@types/node@^8.0.47":
   version "8.0.47"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.47.tgz#968e596f91acd59069054558a00708c445ca30c2"
@@ -131,6 +141,10 @@ alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
 amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
+
+angular-highcharts@4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/angular-highcharts/-/angular-highcharts-4.0.4.tgz#8c40e420f45ae1327daf1852a80e98ae5ab92112"
 
 ansi-html@0.0.7:
   version "0.0.7"
@@ -1831,6 +1845,10 @@ hawk@~6.0.2:
 he@1.1.x:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
+
+highcharts@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-6.0.2.tgz#e3c4c998a21ce6bfa79458fa2c87d967e9234abe"
 
 hmac-drbg@^1.0.0:
   version "1.0.1"

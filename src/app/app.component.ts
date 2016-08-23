@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.css'],
   templateUrl: './app.html'
 })
+
 export class AppComponent implements OnInit {
   ngOnInit() {
     console.log('App loaded!!');

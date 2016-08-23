@@ -24,7 +24,9 @@
     "@angular/platform-browser-dynamic": "^4.4.6",
     "@angular/router": "^4.4.6",
     "@angular/upgrade": "^4.4.6",
+    "angular-highcharts": "4.0.4",
     "core-js": "^2.5.1",
+    "highcharts": "^6.0.2",
     "rxjs": "^5.5.2",
     "tslib": "^1.8.0",
     "zone.js": "^0.8.18"
@@ -32,6 +34,7 @@
   "devDependencies": {
     "@angular/compiler-cli": "^4.4.6",
     "@ngtools/webpack": "^1.7.4",
+    "@types/highcharts": "^5.0.8",
     "@types/node": "^8.0.47",
     "autoprefixer": "^7.1.6",
     "css-loader": "^0.28.7",

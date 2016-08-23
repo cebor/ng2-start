@@ -25,7 +25,9 @@ module.exports = function (env = {}) {
       vendor: [
         'core-js/es6',
         'core-js/es7/reflect',
-        'zone.js/dist/zone'
+        'zone.js/dist/zone',
+        'highcharts',
+        'tslib'
       ],
       main: [
         './src/main.ts'
