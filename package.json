@@ -39,7 +39,7 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "node-sass": "^3.8.0",
-    "postcss-loader": "^0.10.1",
+    "postcss-loader": "^0.11.0",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.3",
     "sass-loader": "^4.0.0",
