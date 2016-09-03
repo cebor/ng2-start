@@ -9,15 +9,14 @@
     "serve": "npm run serve:dev",
     "build": "npm run build:dev",
     "clean": "rimraf dist",
-    "serve:dev": "webpack-dev-server --config config/webpack.dev.js --progress --colors --display-error-details --display-cached --inline --open",
+    "serve:dev": "webpack-dev-server --progress --open",
     "prebuild:dev": "npm run clean",
-    "build:dev": "webpack --config config/webpack.dev.js --progress --colors --display-error-details --display-cached",
-    "serve:prod": "webpack-dev-server --config config/webpack.prod.js --progress --colors --display-error-details --display-cached --inline --open",
+    "build:dev": "webpack --progress",
+    "serve:prod": "webpack-dev-server --env prod --progress --open",
     "prebuild:prod": "npm run clean",
-    "build:prod": "webpack --config config/webpack.prod.js --progress --colors --display-error-details --display-cached",
+    "build:prod": "webpack --env prod --progress",
     "lint": "tslint \"src/**/*.ts\"",
-    "test": "npm run lint",
-    "sync": "cp -r config webpack.config.js package.json"
+    "test": "npm run lint"
   },
   "dependencies": {
     "@angular/common": "^2.0.1",
@@ -29,6 +28,7 @@
     "@angular/router": "^3.0.1",
     "core-js": "^2.4.1",
     "rxjs": "5.0.0-beta.12",
+    "ts-helpers": "^1.1.1",
     "zone.js": "^0.6.21"
   },
   "devDependencies": {
@@ -46,8 +46,7 @@
     "ts-loader": "^0.8.2",
     "tslint": "^3.15.1",
     "typescript": "^2.0.3",
-    "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.1",
-    "webpack-merge": "^0.14.1"
+    "webpack": "^2.1.0-beta.25",
+    "webpack-dev-server": "^2.1.0-beta.7"
   }
 }
