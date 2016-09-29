@@ -39,15 +39,20 @@ module.exports = function (env) {
     },
     plugins: [
       new webpack.LoaderOptionsPlugin({
-        debug: isProd() ? false : true,
-        postcss: function () {
-          return [ autoprefixer ];
+        debug: isProd() ? false : true
+      }),
+      new webpack.LoaderOptionsPlugin({
+        test: [/\.css$/, /\.less$/, /\.scss$/],
+        options: {
+          postcss: function () {
+            return [ autoprefixer ];
+          }
         }
       }),
       new webpack.DefinePlugin({
         ENV: JSON.stringify(env)
       }),
-      new webpack.optimize.CommonsChunkPlugin({name: 'globals'}),
+      new webpack.optimize.CommonsChunkPlugin({ name: 'globals' }),
       new HtmlWebpackPlugin({
         template: './src/index.html',
         chunksSortMode: 'dependency'
