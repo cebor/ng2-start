@@ -67,8 +67,7 @@ module.exports = function (env) {
     devServer: {
       host: 'localhost',
       port: 9000,
-      historyApiFallback: true,
-      outputPath: path.resolve(__dirname, 'dist')
+      historyApiFallback: true
     }
   };
 
