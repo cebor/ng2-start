@@ -19,6 +19,9 @@
     "node_modules",
     "dist"
   ],
+  "awesomeTypescriptLoaderOptions": {
+    "useWebpackText": true
+  },
   "compileOnSave": false,
   "buildOnSave": false
 }

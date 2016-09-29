@@ -30,7 +30,7 @@ module.exports = function (env) {
     },
     module: {
       loaders: [
-        { test: /\.ts$/, loaders: ['ts-loader', 'angular2-template-loader'], exclude: [/\.(spec|e2e)\.ts$/] },
+        { test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader'], exclude: [/\.(spec|e2e)\.ts$/] },
         { test: /\.html$/, loader: 'raw-loader' },
         { test: /\.css$/, loaders: ['raw-loader', 'postcss-loader'] },
         { test: /\.less$/, loaders: ['raw-loader', 'postcss-loader', 'less-loader'] },
@@ -76,6 +76,7 @@ module.exports = function (env) {
     //config.plugins.push(new webpack.optimize.DedupePlugin());
     config.plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
   } else {
+    config.devtool = 'source-map';
     config.entry.globals.push('zone.js/dist/long-stack-trace-zone');
   }
 
