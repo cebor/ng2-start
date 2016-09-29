@@ -11,25 +11,17 @@ module.exports = function (env) {
 
   let config = {
     entry: {
-      polyfills: [
+      globals: [
         'core-js/es6',
         'core-js/es7/reflect',
         'zone.js/dist/zone',
         'ts-helpers'
       ],
-      vendor: [
-        '@angular/common',
-        '@angular/core',
-        '@angular/http',
-        '@angular/platform-browser-dynamic',
-        '@angular/router',
-        'rxjs/Rx'
-      ],
-      main: './src/main.ts'
+      bundle: './src/main.ts'
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: isProd() ? '[name].[chunkhash:7].bundle.js' : '[name].bundle.js',
+      filename: isProd() ? '[name].[chunkhash:7].js' : '[name].js',
       sourceMapFilename: isProd() ? undefined : '[name].map',
       chunkFilename: isProd() ? '[id].[chunkhash:7].chunk.js' : '[id].chunk.js'
     },
@@ -55,7 +47,7 @@ module.exports = function (env) {
       new webpack.DefinePlugin({
         ENV: JSON.stringify(env)
       }),
-      new webpack.optimize.CommonsChunkPlugin({name: ['vendor', 'polyfills']}),
+      new webpack.optimize.CommonsChunkPlugin({name: 'globals'}),
       new HtmlWebpackPlugin({
         template: './src/index.html',
         chunksSortMode: 'dependency'
@@ -79,7 +71,7 @@ module.exports = function (env) {
     //config.plugins.push(new webpack.optimize.DedupePlugin());
     config.plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
   } else {
-    config.entry.polyfills.push('zone.js/dist/long-stack-trace-zone');
+    config.entry.globals.push('zone.js/dist/long-stack-trace-zone');
   }
 
   return config;
