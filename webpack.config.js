@@ -39,10 +39,7 @@ module.exports = function (env) {
     },
     plugins: [
       new webpack.LoaderOptionsPlugin({
-        debug: isProd() ? false : true
-      }),
-      new webpack.LoaderOptionsPlugin({
-        test: [/\.css$/, /\.less$/, /\.scss$/],
+        debug: isProd() ? false : true,
         options: {
           postcss: function () {
             return [ autoprefixer ];
