@@ -29,7 +29,7 @@ module.exports = function (env) {
       extensions: ['.ts', '.js']
     },
     module: {
-      loaders: [
+      rules: [
         { test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader'], exclude: [/\.(spec|e2e)\.ts$/] },
         { test: /\.html$/, loader: 'raw-loader' },
         { test: /\.css$/, loaders: ['raw-loader', 'postcss-loader'] },
