@@ -1,6 +1,7 @@
 let webpack = require('webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let autoprefixer = require('autoprefixer');
+let atl = require('awesome-typescript-loader');
 
 let path = require('path');
 
@@ -30,7 +31,19 @@ module.exports = function (env) {
     },
     module: {
       rules: [
-        { test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader'], exclude: [/\.(spec|e2e)\.ts$/] },
+        {
+          test: /\.ts$/,
+          loaders: [
+            {
+              loader: 'awesome-typescript-loader',
+              query: {
+                useForkChecker: true
+              }
+            },
+            'angular2-template-loader'
+          ],
+          exclude: [/\.(spec|e2e)\.ts$/]
+        },
         { test: /\.html$/, loader: 'raw-loader' },
         { test: /\.css$/, loaders: ['raw-loader', 'postcss-loader'] },
         { test: /\.less$/, loaders: ['raw-loader', 'postcss-loader', 'less-loader'] },
@@ -39,10 +52,11 @@ module.exports = function (env) {
     },
     plugins: [
       new webpack.LoaderOptionsPlugin({
-        debug: isProd() ? false : true,
+        debug: !isProd(),
+        minimize: isProd(),
         options: {
           postcss: function () {
-            return [ autoprefixer ];
+            return [autoprefixer];
           }
         }
       }),
@@ -54,6 +68,7 @@ module.exports = function (env) {
         template: './src/index.html',
         chunksSortMode: 'dependency'
       }),
+      new atl.ForkCheckerPlugin(),
 
       // workarround
       new webpack.ContextReplacementPlugin(
@@ -65,6 +80,15 @@ module.exports = function (env) {
       host: 'localhost',
       port: 9000,
       historyApiFallback: true
+    },
+    node: {
+      fs: 'empty',
+      global: true,
+      crypto: 'empty',
+      process: true,
+      module: false,
+      clearImmediate: false,
+      setImmediate: false
     }
   };
 
