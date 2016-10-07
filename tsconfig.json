@@ -6,9 +6,6 @@
       "es2015",
       "dom"
     ],
-    "types": [
-      "node"
-    ],
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
