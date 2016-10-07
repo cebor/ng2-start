@@ -18,11 +18,11 @@ module.exports = function (env) {
         'zone.js/dist/zone',
         'ts-helpers'
       ],
-      bundle: './src/main.ts'
+      main: './src/main.ts'
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: isProd() ? '[name].[chunkhash:7].js' : '[name].js',
+      filename: isProd() ? '[name].[chunkhash:7].bundle.js' : '[name].bundle.js',
       sourceMapFilename: isProd() ? undefined : '[name].map',
       chunkFilename: isProd() ? '[id].[chunkhash:7].chunk.js' : '[id].chunk.js'
     },
@@ -77,7 +77,6 @@ module.exports = function (env) {
       )
     ],
     devServer: {
-      host: 'localhost',
       port: 9000,
       historyApiFallback: true
     },
