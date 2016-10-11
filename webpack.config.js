@@ -65,7 +65,7 @@ module.exports = function (env) {
       }),
       new webpack.optimize.CommonsChunkPlugin({ name: 'globals' }),
       new HtmlWebpackPlugin({
-        template: './src/index.html',
+        template: './src/index.tmpl.html',
         chunksSortMode: 'dependency'
       }),
       new atl.ForkCheckerPlugin(),
@@ -78,6 +78,7 @@ module.exports = function (env) {
     ],
     devServer: {
       port: 9000,
+      contentBase: './src',
       historyApiFallback: true
     },
     node: {
