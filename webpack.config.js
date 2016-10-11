@@ -16,7 +16,7 @@ module.exports = function (env) {
         'core-js/es6',
         'core-js/es7/reflect',
         'zone.js/dist/zone',
-        'ts-helpers'
+        'tslib'
       ],
       main: './src/main.ts'
     },
