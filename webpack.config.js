@@ -5,6 +5,24 @@ let atl = require('awesome-typescript-loader');
 
 let path = require('path');
 
+const postcssLoader = {
+  loader: 'postcss-loader',
+  options: {
+    plugins: function () {
+      return [
+        require('autoprefixer')
+      ];
+    }
+  }
+};
+
+const awesomeTypescriptLoader = {
+  loader: 'awesome-typescript-loader',
+  query: {
+    useForkChecker: true
+  }
+};
+
 module.exports = function (env) {
   function isProd() {
     return env === 'prod';
@@ -31,34 +49,17 @@ module.exports = function (env) {
     },
     module: {
       rules: [
-        {
-          test: /\.ts$/,
-          loaders: [
-            {
-              loader: 'awesome-typescript-loader',
-              query: {
-                useForkChecker: true
-              }
-            },
-            'angular2-template-loader'
-          ],
-          exclude: [/\.(spec|e2e)\.ts$/]
-        },
+        { test: /\.ts$/, loaders: [awesomeTypescriptLoader, 'angular2-template-loader'], exclude: [/\.(spec|e2e)\.ts$/] },
         { test: /\.html$/, loader: 'raw-loader' },
-        { test: /\.css$/, loaders: ['raw-loader', 'postcss-loader'] },
-        { test: /\.less$/, loaders: ['raw-loader', 'postcss-loader', 'less-loader'] },
-        { test: /\.scss$/, loaders: ['raw-loader', 'postcss-loader', 'sass-loader'] }
+        { test: /\.css$/, loaders: ['raw-loader', postcssLoader] },
+        { test: /\.less$/, loaders: ['raw-loader', postcssLoader, 'less-loader'] },
+        { test: /\.scss$/, loaders: ['raw-loader', postcssLoader, 'sass-loader'] }
       ]
     },
     plugins: [
       new webpack.LoaderOptionsPlugin({
         debug: !isProd(),
-        minimize: isProd(),
-        options: {
-          postcss: function () {
-            return [autoprefixer];
-          }
-        }
+        minimize: isProd()
       }),
       new webpack.DefinePlugin({
         ENV: JSON.stringify(env)
