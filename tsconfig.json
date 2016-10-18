@@ -16,6 +16,9 @@
     "node_modules",
     "dist"
   ],
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true
+  },
   "compileOnSave": false,
   "buildOnSave": false
 }
