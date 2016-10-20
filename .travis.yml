@@ -3,7 +3,6 @@ node_js: '6'
 install:
    - npm install yarn -g
    - yarn install
-   - npm install # fix
 script:
     - npm test
     - npm run build
