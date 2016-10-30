@@ -1,13 +1,15 @@
 language: node_js
-node_js: '6'
+node_js:
+    - '6'
+    - '7'
 install:
-   - npm install yarn -g
-   - yarn install
+    - npm install yarn -g
+    - yarn install
 script:
     - npm test
     - npm run build
     - npm run build:prod
 cache:
-  directories:
-     - $HOME/.npm
-     - $HOME/.yarn-cache
+    directories:
+        - $HOME/.npm
+        - $HOME/.yarn-cache
