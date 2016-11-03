@@ -39,7 +39,7 @@
     "html-webpack-plugin": "^2.24.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
-    "node-sass": "^3.10.1",
+    "node-sass": "^3.11.0",
     "postcss-loader": "^1.1.0",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.4",
