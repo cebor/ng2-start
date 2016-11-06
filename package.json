@@ -34,7 +34,7 @@
   "devDependencies": {
     "@types/node": "^6.0.46",
     "angular2-template-loader": "^0.6.0",
-    "autoprefixer": "^6.5.1",
+    "autoprefixer": "^6.5.2",
     "awesome-typescript-loader": "^2.2.4",
     "html-webpack-plugin": "^2.24.0",
     "less": "^2.7.1",
