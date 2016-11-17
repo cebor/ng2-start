@@ -1,9 +1,8 @@
-let webpack = require('webpack');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
-let autoprefixer = require('autoprefixer');
-let atl = require('awesome-typescript-loader');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
-let path = require('path');
+const path = require('path');
 
 const postcssLoader = {
   loader: 'postcss-loader',
@@ -13,13 +12,6 @@ const postcssLoader = {
         require('autoprefixer')
       ];
     }
-  }
-};
-
-const awesomeTypescriptLoader = {
-  loader: 'awesome-typescript-loader',
-  query: {
-    useForkChecker: true
   }
 };
 
@@ -49,7 +41,7 @@ module.exports = function (env) {
     },
     module: {
       rules: [
-        { test: /\.ts$/, loaders: [awesomeTypescriptLoader, 'angular2-template-loader'], exclude: [/\.(spec|e2e)\.ts$/] },
+        { test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader'], exclude: [/\.(spec|e2e)\.ts$/] },
         { test: /\.html$/, loader: 'raw-loader' },
         { test: /\.css$/, loaders: ['raw-loader', postcssLoader] },
         { test: /\.less$/, loaders: ['raw-loader', postcssLoader, 'less-loader'] },
@@ -69,7 +61,6 @@ module.exports = function (env) {
         template: './src/index.html',
         chunksSortMode: 'dependency'
       }),
-      new atl.ForkCheckerPlugin(),
 
       // workarround
       new webpack.ContextReplacementPlugin(
@@ -81,20 +72,10 @@ module.exports = function (env) {
       port: 9000,
       contentBase: './src',
       historyApiFallback: true
-    },
-    node: {
-      fs: 'empty',
-      global: true,
-      crypto: 'empty',
-      process: true,
-      module: false,
-      clearImmediate: false,
-      setImmediate: false
     }
   };
 
   if (isProd()) {
-    //config.plugins.push(new webpack.optimize.DedupePlugin());
     config.plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
   } else {
     config.devtool = 'source-map';
