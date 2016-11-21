@@ -4,17 +4,6 @@ const autoprefixer = require('autoprefixer');
 
 const path = require('path');
 
-const postcssLoader = {
-  loader: 'postcss-loader',
-  options: {
-    plugins: function () {
-      return [
-        require('autoprefixer')
-      ];
-    }
-  }
-};
-
 module.exports = function (env) {
   function isProd() {
     return env === 'prod';
@@ -43,9 +32,9 @@ module.exports = function (env) {
       rules: [
         { test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader'], exclude: [/\.(spec|e2e)\.ts$/] },
         { test: /\.html$/, loader: 'raw-loader' },
-        { test: /\.css$/, loaders: ['raw-loader', postcssLoader] },
-        { test: /\.less$/, loaders: ['raw-loader', postcssLoader, 'less-loader'] },
-        { test: /\.scss$/, loaders: ['raw-loader', postcssLoader, 'sass-loader'] }
+        { test: /\.css$/, loaders: ['raw-loader', 'postcss-loader'] },
+        { test: /\.less$/, loaders: ['raw-loader', 'postcss-loader', 'less-loader'] },
+        { test: /\.scss$/, loaders: ['raw-loader', 'postcss-loader', 'sass-loader'] }
       ]
     },
     plugins: [

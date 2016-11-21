@@ -8,7 +8,7 @@ Requirements
 
 ```json
 {
-  "node": ">=4"
+  "node": ">=6"
 }
 ```
 

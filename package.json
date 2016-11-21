@@ -16,7 +16,8 @@
     "prebuild:prod": "npm run clean",
     "build:prod": "webpack --env prod --progress",
     "lint": "tslint \"src/**/*.ts\"",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "ngc": "ngc"
   },
   "dependencies": {
     "@angular/common": "^2.2.1",
@@ -33,6 +34,8 @@
     "zone.js": "^0.6.26"
   },
   "devDependencies": {
+    "@angular/compiler-cli": "^2.2.1",
+    "@angular/platform-server": "^2.2.1",
     "@types/node": "^6.0.48",
     "angular2-template-loader": "^0.6.0",
     "autoprefixer": "^6.5.3",
