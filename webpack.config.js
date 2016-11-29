@@ -4,6 +4,8 @@ const autoprefixer = require('autoprefixer');
 
 const path = require('path');
 
+const nodeModules = path.resolve('node_modules');
+
 module.exports = function (env) {
   function isProd() {
     return env === 'prod';
@@ -11,11 +13,10 @@ module.exports = function (env) {
 
   let config = {
     entry: {
-      globals: [
+      vendor: [
         'core-js/es6',
         'core-js/es7/reflect',
-        'zone.js/dist/zone',
-        'tslib'
+        'zone.js/dist/zone'
       ],
       main: './src/main.ts'
     },
@@ -45,7 +46,10 @@ module.exports = function (env) {
       new webpack.DefinePlugin({
         ENV: JSON.stringify(env)
       }),
-      new webpack.optimize.CommonsChunkPlugin({ name: 'globals' }),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks: (module) => module.userRequest && module.userRequest.startsWith(nodeModules)
+      }),
       new HtmlWebpackPlugin({
         template: './src/index.html',
         chunksSortMode: 'dependency'
@@ -68,7 +72,7 @@ module.exports = function (env) {
     config.plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
   } else {
     config.devtool = 'source-map';
-    config.entry.globals.push('zone.js/dist/long-stack-trace-zone');
+    config.entry.vendor.push('zone.js/dist/long-stack-trace-zone');
   }
 
   return config;

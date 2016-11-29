@@ -10,16 +10,12 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "sourceMap": true,
-    "noEmitHelpers": true
+    "importHelpers": true
   },
   "exclude": [
     "node_modules",
     "dist"
   ],
   "compileOnSave": false,
-  "buildOnSave": false,
-  "angularCompilerOptions": {
-    "genDir": "aot",
-    "skipMetadataEmit" : true
-  }
+  "buildOnSave": false
 }
