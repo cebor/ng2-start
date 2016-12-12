@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
+const { CheckerPlugin } = require('awesome-typescript-loader');
+
 const path = require('path');
 
 const nodeModules = path.resolve('node_modules');
@@ -54,6 +56,7 @@ module.exports = function (env) {
         template: './src/index.html',
         chunksSortMode: 'dependency'
       }),
+      new CheckerPlugin(),
 
       // workarround
       new webpack.ContextReplacementPlugin(
