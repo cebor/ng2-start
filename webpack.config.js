@@ -72,6 +72,7 @@ module.exports = function (env) {
   };
 
   if (isProd()) {
+    config.plugins.push(new webpack.LoaderOptionsPlugin({ minimize: true }));
     config.plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
   } else {
     config.devtool = 'source-map';
