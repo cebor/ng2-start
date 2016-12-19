@@ -68,6 +68,9 @@ module.exports = function (env) {
       port: 9000,
       contentBase: './src',
       historyApiFallback: true
+    },
+    performance: {
+      hints: false
     }
   };
 
