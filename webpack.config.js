@@ -33,11 +33,11 @@ module.exports = function (env) {
     },
     module: {
       rules: [
-        { test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader'], exclude: [/\.(spec|e2e)\.ts$/] },
-        { test: /\.html$/, loader: 'raw-loader' },
-        { test: /\.css$/, loaders: ['raw-loader', 'postcss-loader'] },
-        { test: /\.less$/, loaders: ['raw-loader', 'postcss-loader', 'less-loader'] },
-        { test: /\.scss$/, loaders: ['raw-loader', 'postcss-loader', 'sass-loader'] }
+        { test: /\.ts$/, use: ['awesome-typescript-loader', 'angular2-template-loader'], exclude: [/\.(spec|e2e)\.ts$/] },
+        { test: /\.html$/, use: 'raw-loader' },
+        { test: /\.css$/, use: ['raw-loader', 'postcss-loader'] },
+        { test: /\.less$/, use: ['raw-loader', 'postcss-loader', 'less-loader'] },
+        { test: /\.scss$/, use: ['raw-loader', 'postcss-loader', 'sass-loader'] }
       ]
     },
     plugins: [
