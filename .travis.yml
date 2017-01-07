@@ -1,9 +1,13 @@
+dist: trusty
+sudo: false
 language: node_js
 node_js:
   - '6'
   - '7'
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH=$HOME/.yarn/bin:$PATH
 install:
-  - npm install yarn -g
   - yarn install
 script:
   - npm test
@@ -11,5 +15,4 @@ script:
   - npm run build:prod
 cache:
   directories:
-    - $HOME/.npm
-    - $HOME/.yarn-cache
+    - $HOME/.cache/yarn
