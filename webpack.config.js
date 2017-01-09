@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
-
 const { CheckerPlugin } = require('awesome-typescript-loader');
 
 const path = require('path');
@@ -20,7 +19,10 @@ module.exports = function (env) {
         'core-js/es7/reflect',
         'zone.js/dist/zone'
       ],
-      main: './src/main.ts'
+      main: [
+        './src/main.ts',
+        'style-loader!css-loader!./src/styles.css'
+      ]
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -35,7 +37,7 @@ module.exports = function (env) {
       rules: [
         { test: /\.ts$/, use: ['awesome-typescript-loader', 'angular2-template-loader'], exclude: [/\.(spec|e2e)\.ts$/] },
         { test: /\.html$/, use: 'raw-loader' },
-        { test: /\.css$/, use: ['raw-loader', 'postcss-loader'] },
+        { test: /\.css$/, use: ['raw-loader', 'postcss-loader'], exclude: [path.resolve(__dirname, 'src', 'styles.css')] },
         { test: /\.less$/, use: ['raw-loader', 'postcss-loader', 'less-loader'] },
         { test: /\.scss$/, use: ['raw-loader', 'postcss-loader', 'sass-loader'] }
       ]
@@ -43,7 +45,12 @@ module.exports = function (env) {
     plugins: [
       new webpack.LoaderOptionsPlugin({
         debug: !isProd(),
-        minimize: isProd()
+        minimize: isProd(),
+        options: {
+          postcss: [
+            require('autoprefixer')
+          ]
+        }
       }),
       new webpack.DefinePlugin({
         ENV: JSON.stringify(env)
@@ -52,11 +59,11 @@ module.exports = function (env) {
         name: 'vendor',
         minChunks: (module) => module.userRequest && module.userRequest.startsWith(nodeModules)
       }),
+      new CheckerPlugin(),
       new HtmlWebpackPlugin({
         template: './src/index.html',
         chunksSortMode: 'dependency'
       }),
-      new CheckerPlugin(),
 
       // workarround
       new webpack.ContextReplacementPlugin(
