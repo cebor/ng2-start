@@ -34,7 +34,7 @@
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/@angular/upgrade/-/upgrade-2.4.2.tgz#1d661d5befb2d8303dd9043cfdf6a1edd181a63a"
 
-"@types/node@^6.0.58":
+"@types/node@^6.0.59":
   version "6.0.59"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.59.tgz#b7fd8f3144c447c829a8eab8805c3a523e9e5b44"
 
@@ -223,7 +223,7 @@ autoprefixer@^6.3.1, autoprefixer@^6.6.1:
     postcss "^5.2.8"
     postcss-value-parser "^3.2.3"
 
-awesome-typescript-loader@^3.0.0-beta.17:
+awesome-typescript-loader@^3.0.0-beta.18:
   version "3.0.0-beta.18"
   resolved "https://registry.yarnpkg.com/awesome-typescript-loader/-/awesome-typescript-loader-3.0.0-beta.18.tgz#7a72b1cca9a2dca59794ab2a4133f779a3a221e7"
   dependencies:
@@ -3656,7 +3656,7 @@ webpack-sources@^0.1.0:
     source-list-map "~0.1.0"
     source-map "~0.5.3"
 
-webpack@^2.2.0-rc.1:
+webpack@^2.2.0-rc.3:
   version "2.2.0-rc.3"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.2.0-rc.3.tgz#ac072c06c88aae75abdfd33510e7c5fd965f843f"
   dependencies:

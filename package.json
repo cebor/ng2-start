@@ -33,10 +33,10 @@
     "zone.js": "^0.7.4"
   },
   "devDependencies": {
-    "@types/node": "^6.0.58",
+    "@types/node": "^6.0.59",
     "angular2-template-loader": "^0.6.0",
     "autoprefixer": "^6.6.1",
-    "awesome-typescript-loader": "^3.0.0-beta.17",
+    "awesome-typescript-loader": "^3.0.0-beta.18",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "html-webpack-plugin": "^2.26.0",
@@ -50,7 +50,7 @@
     "style-loader": "^0.13.1",
     "tslint": "^4.3.1",
     "typescript": "^2.1.4",
-    "webpack": "^2.2.0-rc.1",
+    "webpack": "^2.2.0-rc.3",
     "webpack-dev-server": "^2.2.0-rc.0"
   }
 }
