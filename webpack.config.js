@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 
 const path = require('path');
@@ -19,9 +20,11 @@ module.exports = function (env) {
         'core-js/es7/reflect',
         'zone.js/dist/zone'
       ],
+      styles: [
+        './src/styles.css'
+      ],
       main: [
-        './src/main.ts',
-        'style-loader!css-loader!./src/styles.css'
+        './src/main.ts'
       ]
     },
     output: {
@@ -36,7 +39,7 @@ module.exports = function (env) {
     module: {
       rules: [
         { test: /\.ts$/, use: ['awesome-typescript-loader', 'angular2-template-loader'], exclude: [/\.(spec|e2e)\.ts$/] },
-        { test: /\.html$/, use: 'raw-loader' },
+        { test: /\.html$/, use: ['raw-loader'] },
         { test: /\.css$/, use: ['raw-loader', 'postcss-loader'], exclude: [path.resolve(__dirname, 'src', 'styles.css')] },
         { test: /\.less$/, use: ['raw-loader', 'postcss-loader', 'less-loader'] },
         { test: /\.scss$/, use: ['raw-loader', 'postcss-loader', 'sass-loader'] }
@@ -57,6 +60,7 @@ module.exports = function (env) {
       }),
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
+        chunks: ['main'],
         minChunks: (module) => module.userRequest && module.userRequest.startsWith(nodeModules)
       }),
       new CheckerPlugin(),
@@ -82,11 +86,25 @@ module.exports = function (env) {
   };
 
   if (isProd()) {
+    config.module.rules.push({
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract({
+        fallbackLoader: 'style-loader',
+        loader: 'css-loader'
+      }),
+      include: [path.resolve(__dirname, 'src', 'styles.css')]
+    });
+    config.plugins.push(new ExtractTextPlugin('[name].[chunkhash:7].css'));
     config.plugins.push(new webpack.LoaderOptionsPlugin({ minimize: true }));
     config.plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
   } else {
     config.devtool = 'source-map';
     config.entry.vendor.push('zone.js/dist/long-stack-trace-zone');
+    config.module.rules.push({
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader'],
+      include: [path.resolve(__dirname, 'src', 'styles.css')]
+    });
   }
 
   return config;
