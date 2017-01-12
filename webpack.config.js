@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const { CheckerPlugin } = require('awesome-typescript-loader');
+const { AotPlugin } = require('@ngtools/webpack');
 
 const path = require('path');
 
@@ -38,7 +38,7 @@ module.exports = function (env) {
     },
     module: {
       rules: [
-        { test: /\.ts$/, use: ['awesome-typescript-loader', 'angular2-template-loader'], exclude: [/\.(spec|e2e)\.ts$/] },
+        { test: /\.ts$/, use: '@ngtools/webpack', exclude: [/\.(spec|e2e)\.ts$/] },
         { test: /\.html$/, use: ['raw-loader'] },
         { test: /\.css$/, use: ['raw-loader', 'postcss-loader'], exclude: [path.resolve(__dirname, 'src', 'styles.css')] },
         { test: /\.less$/, use: ['raw-loader', 'postcss-loader', 'less-loader'] },
@@ -64,7 +64,11 @@ module.exports = function (env) {
         chunks: ['main'],
         minChunks: (module) => module.userRequest && module.userRequest.startsWith(nodeModules)
       }),
-      new CheckerPlugin(),
+      new AotPlugin({
+        tsConfigPath: './tsconfig.json',
+        mainPath: './src/main.ts',
+        skipCodeGeneration: !isProd()
+      }),
       new HtmlWebpackPlugin({
         template: './src/index.html',
         chunksSortMode: 'dependency'
