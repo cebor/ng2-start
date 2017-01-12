@@ -49,9 +49,10 @@ module.exports = function (env) {
       new webpack.LoaderOptionsPlugin({
         debug: !isProd(),
         minimize: isProd(),
+        context: __dirname,
         options: {
           postcss: [
-            require('autoprefixer')
+            autoprefixer
           ]
         }
       }),
@@ -90,7 +91,7 @@ module.exports = function (env) {
       test: /\.css$/,
       loader: ExtractTextPlugin.extract({
         fallbackLoader: 'style-loader',
-        loader: 'css-loader'
+        loader: 'css-loader?importLoaders=1!postcss-loader'
       }),
       include: [path.resolve(__dirname, 'src', 'styles.css')]
     });
@@ -102,7 +103,7 @@ module.exports = function (env) {
     config.entry.vendor.push('zone.js/dist/long-stack-trace-zone');
     config.module.rules.push({
       test: /\.css$/,
-      use: ['style-loader', 'css-loader'],
+      use: ['style-loader', 'css-loader?importLoaders=1', 'postcss-loader'],
       include: [path.resolve(__dirname, 'src', 'styles.css')]
     });
   }
