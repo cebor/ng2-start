@@ -9,9 +9,7 @@ const path = require('path');
 const nodeModules = path.resolve('node_modules');
 
 module.exports = function (env) {
-  function isProd() {
-    return env === 'prod';
-  }
+  const isProd = env === 'prod';
 
   let config = {
     entry: {
@@ -29,9 +27,9 @@ module.exports = function (env) {
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: isProd() ? '[name].[chunkhash:7].bundle.js' : '[name].bundle.js',
-      sourceMapFilename: isProd() ? undefined : '[name].map',
-      chunkFilename: isProd() ? '[id].[chunkhash:7].chunk.js' : '[id].chunk.js'
+      filename: isProd ? '[name].[chunkhash:7].bundle.js' : '[name].bundle.js',
+      sourceMapFilename: isProd ? undefined : '[name].map',
+      chunkFilename: isProd ? '[id].[chunkhash:7].chunk.js' : '[id].chunk.js'
     },
     resolve: {
       extensions: ['.ts', '.js']
@@ -47,8 +45,8 @@ module.exports = function (env) {
     },
     plugins: [
       new webpack.LoaderOptionsPlugin({
-        debug: !isProd(),
-        minimize: isProd(),
+        debug: !isProd,
+        minimize: isProd,
         context: __dirname,
         options: {
           postcss: [
@@ -67,7 +65,7 @@ module.exports = function (env) {
       new AotPlugin({
         tsConfigPath: './tsconfig.json',
         mainPath: './src/main.ts',
-        skipCodeGeneration: !isProd()
+        skipCodeGeneration: !isProd
       }),
       new HtmlWebpackPlugin({
         template: './src/index.html',
@@ -90,7 +88,7 @@ module.exports = function (env) {
     }
   };
 
-  if (isProd()) {
+  if (isProd) {
     config.module.rules.push({
       test: /\.css$/,
       loader: ExtractTextPlugin.extract({
