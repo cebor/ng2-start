@@ -58,6 +58,10 @@ module.exports = function (env) {
         ENV: JSON.stringify(env)
       }),
       new webpack.optimize.CommonsChunkPlugin({
+        name: 'inline',
+        minChunks: Infinity
+      }),
+      new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
         chunks: ['main'],
         minChunks: (module) => module.userRequest && module.userRequest.startsWith(nodeModules)
@@ -68,8 +72,7 @@ module.exports = function (env) {
         skipCodeGeneration: !isProd
       }),
       new HtmlWebpackPlugin({
-        template: './src/index.html',
-        chunksSortMode: 'dependency'
+        template: './src/index.html'
       }),
 
       // workarround
