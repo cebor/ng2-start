@@ -8,6 +8,4 @@ script:
   - npm test
   - npm run build
   - npm run build:prod
-cache:
-  directories:
-    - $HOME/.cache/yarn
+cache: yarn
