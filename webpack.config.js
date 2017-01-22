@@ -96,7 +96,6 @@ module.exports = function (env) {
       include: [styles]
     });
     config.plugins.push(new ExtractTextPlugin('[name].[chunkhash:7].css'));
-    config.plugins.push(new webpack.LoaderOptionsPlugin({ minimize: true }));
     config.plugins.push(new webpack.optimize.UglifyJsPlugin());
   } else {
     config.devtool = 'source-map';
