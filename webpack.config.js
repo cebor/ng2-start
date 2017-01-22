@@ -73,21 +73,12 @@ module.exports = function (env) {
       }),
       new HtmlWebpackPlugin({
         template: './src/index.html'
-      }),
-
-      // workarround
-      new webpack.ContextReplacementPlugin(
-        /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-        path.resolve(__dirname, 'src')
-      )
+      })
     ],
     devServer: {
       port: 9000,
       contentBase: './src',
       historyApiFallback: true
-    },
-    performance: {
-      hints: false
     }
   };
 
