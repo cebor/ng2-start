@@ -6,7 +6,11 @@ const { AotPlugin } = require('@ngtools/webpack');
 
 const path = require('path');
 
-const nodeModules = path.resolve('node_modules');
+const root = (...dir) => path.resolve(__dirname, ...dir);
+
+const dist = root('dist');
+const nodeModules = root('node_modules');
+const styles = root('src', 'styles.css');
 
 module.exports = function (env) {
   const isProd = env === 'prod';
@@ -26,7 +30,7 @@ module.exports = function (env) {
       ]
     },
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: dist,
       filename: isProd ? '[name].[chunkhash:7].bundle.js' : '[name].bundle.js',
       sourceMapFilename: isProd ? undefined : '[name].map',
       chunkFilename: isProd ? '[id].[chunkhash:7].chunk.js' : '[id].chunk.js'
@@ -38,7 +42,7 @@ module.exports = function (env) {
       rules: [
         { test: /\.ts$/, use: '@ngtools/webpack', exclude: [/\.(spec|e2e)\.ts$/] },
         { test: /\.html$/, use: ['raw-loader'] },
-        { test: /\.css$/, use: ['raw-loader', 'postcss-loader'], exclude: [path.resolve(__dirname, 'src', 'styles.css')] },
+        { test: /\.css$/, use: ['raw-loader', 'postcss-loader'], exclude: [styles] },
         { test: /\.less$/, use: ['raw-loader', 'postcss-loader', 'less-loader'] },
         { test: /\.scss$/, use: ['raw-loader', 'postcss-loader', 'sass-loader'] }
       ]
@@ -89,7 +93,7 @@ module.exports = function (env) {
         fallbackLoader: 'style-loader',
         loader: 'css-loader?importLoaders=1!postcss-loader'
       }),
-      include: [path.resolve(__dirname, 'src', 'styles.css')]
+      include: [styles]
     });
     config.plugins.push(new ExtractTextPlugin('[name].[chunkhash:7].css'));
     config.plugins.push(new webpack.LoaderOptionsPlugin({ minimize: true }));
@@ -100,7 +104,7 @@ module.exports = function (env) {
     config.module.rules.push({
       test: /\.css$/,
       use: ['style-loader', 'css-loader?importLoaders=1', 'postcss-loader'],
-      include: [path.resolve(__dirname, 'src', 'styles.css')]
+      include: [styles]
     });
   }
 
