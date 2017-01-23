@@ -12,8 +12,9 @@ const dist = root('dist');
 const nodeModules = root('node_modules');
 const styles = root('src', 'styles.css');
 
-module.exports = function (env) {
-  const isProd = env === 'prod';
+module.exports = function (env = {}) {
+  const isProd = !!env.prod;
+  const aot = !!env.aot;
 
   let config = {
     entry: {
@@ -59,7 +60,7 @@ module.exports = function (env) {
         }
       }),
       new webpack.DefinePlugin({
-        ENV: JSON.stringify(env)
+        IS_PROD: JSON.stringify(isProd)
       }),
       new webpack.optimize.CommonsChunkPlugin({
         name: 'inline',
@@ -73,7 +74,7 @@ module.exports = function (env) {
       new AotPlugin({
         tsConfigPath: './tsconfig.json',
         mainPath: './src/main.ts',
-        skipCodeGeneration: !isProd
+        skipCodeGeneration: !aot
       }),
       new HtmlWebpackPlugin({
         template: './src/index.html'

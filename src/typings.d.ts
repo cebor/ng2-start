@@ -1,1 +1,1 @@
-declare var ENV: string;
+declare var IS_PROD: boolean;

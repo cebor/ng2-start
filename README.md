@@ -30,6 +30,12 @@ npm start
 # Build
 npm run build
 
-# Build for production (this will also use aot compiler)
+# Build with aot
+npm run build:aot
+
+# Build for production
 npm run build:prod
+
+# Build for production with aot
+npm run build:prod:aot
 ```
