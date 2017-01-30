@@ -90,7 +90,7 @@ module.exports = function (env = {}) {
   if (isProd) {
     config.module.rules.push({
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract({
+      use: ExtractTextPlugin.extract({
         fallbackLoader: 'style-loader',
         loader: 'css-loader?importLoaders=1!postcss-loader'
       }),
