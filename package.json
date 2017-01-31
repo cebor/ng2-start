@@ -40,7 +40,7 @@
     "@angular/compiler-cli": "^2.4.5",
     "@ngtools/webpack": "^1.2.4",
     "@types/node": "^7.0.4",
-    "autoprefixer": "^6.7.0",
+    "autoprefixer": "^6.7.1",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^2.0.0-rc.2",
     "html-webpack-plugin": "^2.28.0",
@@ -54,7 +54,7 @@
     "style-loader": "^0.13.1",
     "tslint": "^4.4.2",
     "typescript": "^2.1.5",
-    "webpack": "^2.2.0",
+    "webpack": "^2.2.1",
     "webpack-dev-server": "^2.2.0"
   }
 }
