@@ -7,7 +7,5 @@ node_js:
 script:
   - npm test
   - npm run build
-  - npm run build:aot
   - npm run build:prod
-  - npm run build:prod:aot
 cache: yarn
