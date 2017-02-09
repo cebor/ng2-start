@@ -91,8 +91,8 @@ module.exports = function (env = {}) {
     config.module.rules.push({
       test: /\.css$/,
       use: ExtractTextPlugin.extract({
-        fallbackLoader: 'style-loader',
-        loader: 'css-loader?importLoaders=1!postcss-loader'
+        fallback: 'style-loader',
+        use: 'css-loader?importLoaders=1!postcss-loader'
       }),
       include: [styles]
     });
