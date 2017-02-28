@@ -18,7 +18,7 @@ module.exports = function (env = {}) {
 
   let config = {
     entry: {
-      vendor: [
+      polyfills: [
         'core-js/es6',
         'core-js/es7/reflect',
         'zone.js/dist/zone'
@@ -63,7 +63,7 @@ module.exports = function (env = {}) {
         IS_PROD: JSON.stringify(isProd)
       }),
       new webpack.optimize.CommonsChunkPlugin({
-        name: 'inline',
+        name: 'polyfills',
         minChunks: Infinity
       }),
       new webpack.optimize.CommonsChunkPlugin({
@@ -100,7 +100,7 @@ module.exports = function (env = {}) {
     config.plugins.push(new webpack.optimize.UglifyJsPlugin());
   } else {
     config.devtool = 'source-map';
-    config.entry.vendor.push('zone.js/dist/long-stack-trace-zone');
+    config.entry.polyfills.push('zone.js/dist/long-stack-trace-zone');
     config.module.rules.push({
       test: /\.css$/,
       use: ['style-loader', 'css-loader?importLoaders=1', 'postcss-loader'],
