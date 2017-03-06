@@ -41,7 +41,7 @@ module.exports = function (env = {}) {
     },
     module: {
       rules: [
-        { test: /\.ts$/, use: '@ngtools/webpack', exclude: [/\.(spec|e2e)\.ts$/] },
+        { test: /\.ts$/, use: ['@ngtools/webpack'], exclude: [/\.(spec|e2e)\.ts$/] },
         { test: /\.html$/, use: ['raw-loader'] },
         { test: /\.css$/, use: ['raw-loader', 'postcss-loader'], exclude: [styles] },
         { test: /\.less$/, use: ['raw-loader', 'postcss-loader', 'less-loader'] },
@@ -80,6 +80,7 @@ module.exports = function (env = {}) {
         template: './src/index.html'
       })
     ],
+    devtool: !isProd ? 'source-map' : undefined;
     devServer: {
       port: 9000,
       contentBase: './src',
@@ -99,7 +100,6 @@ module.exports = function (env = {}) {
     config.plugins.push(new ExtractTextPlugin('[name].[chunkhash:7].css'));
     config.plugins.push(new webpack.optimize.UglifyJsPlugin());
   } else {
-    config.devtool = 'source-map';
     config.entry.polyfills.push('zone.js/dist/long-stack-trace-zone');
     config.module.rules.push({
       test: /\.css$/,
