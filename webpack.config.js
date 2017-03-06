@@ -80,7 +80,7 @@ module.exports = function (env = {}) {
         template: './src/index.html'
       })
     ],
-    devtool: !isProd ? 'source-map' : undefined;
+    devtool: !isProd ? 'source-map' : undefined,
     devServer: {
       port: 9000,
       contentBase: './src',
