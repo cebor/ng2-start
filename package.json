@@ -17,26 +17,26 @@
     "test": "npm run lint"
   },
   "dependencies": {
-    "@angular/common": "^4.0.0-rc.3",
-    "@angular/compiler": "^4.0.0-rc.3",
-    "@angular/core": "^4.0.0-rc.3",
-    "@angular/http": "^4.0.0-rc.3",
-    "@angular/platform-browser": "^4.0.0-rc.3",
-    "@angular/platform-browser-dynamic": "^4.0.0-rc.3",
-    "@angular/router": "^4.0.0-rc.3",
-    "@angular/upgrade": "^4.0.0-rc.3",
+    "@angular/common": "^4.0.0-rc.5",
+    "@angular/compiler": "^4.0.0-rc.5",
+    "@angular/core": "^4.0.0-rc.5",
+    "@angular/http": "^4.0.0-rc.5",
+    "@angular/platform-browser": "^4.0.0-rc.5",
+    "@angular/platform-browser-dynamic": "^4.0.0-rc.5",
+    "@angular/router": "^4.0.0-rc.5",
+    "@angular/upgrade": "^4.0.0-rc.5",
     "core-js": "^2.4.1",
     "rxjs": "^5.2.0",
     "tslib": "^1.6.0",
-    "zone.js": "^0.7.2"
+    "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^4.0.0-rc.3",
-    "@angular/tsc-wrapped": "^4.0.0-rc.2",
-    "@ngtools/webpack": "^1.2.12",
+    "@angular/compiler-cli": "^4.0.0-rc.5",
+    "@angular/tsc-wrapped": "^4.0.0-rc.5",
+    "@ngtools/webpack": "^1.2.13",
     "@types/node": "^7.0.8",
     "autoprefixer": "^6.7.7",
-    "css-loader": "^0.27.2",
+    "css-loader": "^0.27.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "html-webpack-plugin": "^2.28.0",
     "less": "^2.7.2",
@@ -50,6 +50,6 @@
     "tslint": "^4.5.1",
     "typescript": "~2.2.1",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1"
+    "webpack-dev-server": "^2.4.2"
   }
 }
