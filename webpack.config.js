@@ -63,13 +63,13 @@ module.exports = function (env = {}) {
         IS_PROD: JSON.stringify(isProd)
       }),
       new webpack.optimize.CommonsChunkPlugin({
-        name: 'polyfills',
-        minChunks: Infinity
-      }),
-      new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
         chunks: ['main'],
         minChunks: (module) => module.userRequest && module.userRequest.startsWith(nodeModules)
+      }),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'polyfills',
+        minChunks: Infinity
       }),
       new AotPlugin({
         tsConfigPath: './tsconfig.json',
