@@ -18,7 +18,7 @@ module.exports = function (env = {}) {
 
   let config = {
     entry: {
-      polyfills: [
+      vendor: [
         'core-js/es6',
         'core-js/es7/reflect',
         'zone.js/dist/zone'
@@ -68,7 +68,7 @@ module.exports = function (env = {}) {
         minChunks: (module) => module.userRequest && module.userRequest.startsWith(nodeModules)
       }),
       new webpack.optimize.CommonsChunkPlugin({
-        name: 'polyfills',
+        name: 'inline',
         minChunks: Infinity
       }),
       new AotPlugin({
@@ -100,7 +100,7 @@ module.exports = function (env = {}) {
     config.plugins.push(new ExtractTextPlugin('[name].[chunkhash:7].css'));
     config.plugins.push(new webpack.optimize.UglifyJsPlugin());
   } else {
-    config.entry.polyfills.push('zone.js/dist/long-stack-trace-zone');
+    config.entry.vendor.push('zone.js/dist/long-stack-trace-zone');
     config.module.rules.push({
       test: /\.css$/,
       use: ['style-loader', 'css-loader?importLoaders=1', 'postcss-loader'],
