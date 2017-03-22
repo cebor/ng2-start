@@ -52,8 +52,8 @@ module.exports = function (env = {}) {
       new webpack.LoaderOptionsPlugin({
         debug: !isProd,
         minimize: isProd,
-        context: __dirname,
         options: {
+          context: __dirname,
           postcss: [
             autoprefixer
           ]
