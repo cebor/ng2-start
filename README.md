@@ -1,5 +1,7 @@
 # ng2-start
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/cebor/ng2-start.svg)](https://greenkeeper.io/)
+
 This is a minimal setup to start creating an angular2 application with webpack.
 
 ### Instructions
