@@ -54,9 +54,6 @@ module.exports = function (env = {}) {
         minimize: isProd,
         options: {
           context: __dirname,
-          postcss: [
-            autoprefixer
-          ]
         }
       }),
       new webpack.DefinePlugin({
