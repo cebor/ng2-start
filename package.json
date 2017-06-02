@@ -46,7 +46,7 @@
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.1",
-    "tslint": "^5.4.0",
+    "tslint": "^5.4.2",
     "typescript": "~2.3.3",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
