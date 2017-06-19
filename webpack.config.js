@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const { AotPlugin } = require('@ngtools/webpack');
 
 const path = require('path');
@@ -95,7 +96,7 @@ module.exports = function (env = {}) {
       include: [styles]
     });
     config.plugins.push(new ExtractTextPlugin('[name].[chunkhash:7].css'));
-    config.plugins.push(new webpack.optimize.UglifyJsPlugin());
+    config.plugins.push(new UglifyJSPlugin());
   } else {
     config.entry.vendor.push('zone.js/dist/long-stack-trace-zone');
     config.module.rules.push({
