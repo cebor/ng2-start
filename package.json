@@ -33,7 +33,7 @@
   "devDependencies": {
     "@angular/compiler-cli": "^4.2.3",
     "@ngtools/webpack": "^1.4.1",
-    "@types/node": "^7.0.31",
+    "@types/node": "^8.0.0",
     "autoprefixer": "^7.1.1",
     "css-loader": "^0.28.3",
     "extract-text-webpack-plugin": "^2.1.2",
