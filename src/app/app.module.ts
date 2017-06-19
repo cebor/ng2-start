@@ -13,9 +13,9 @@ import { AboutComponent } from './about/about.component';
     routing
   ],
   declarations: [
+    AboutComponent,
     AppComponent,
     HomeComponent,
-    AboutComponent
   ],
   bootstrap: [ AppComponent ]
 })
