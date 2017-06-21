@@ -62,12 +62,7 @@ module.exports = function (env = {}) {
       }),
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
-        chunks: ['main'],
         minChunks: (module) => module.userRequest && module.userRequest.startsWith(nodeModules)
-      }),
-      new webpack.optimize.CommonsChunkPlugin({
-        name: 'inline',
-        minChunks: Infinity
       }),
       new AotPlugin({
         tsConfigPath: './tsconfig.json',
@@ -76,7 +71,8 @@ module.exports = function (env = {}) {
       }),
       new HtmlWebpackPlugin({
         template: './src/index.html'
-      })
+      }),
+      new webpack.optimize.ModuleConcatenationPlugin()
     ],
     devtool: !isProd ? 'source-map' : undefined,
     devServer: {
