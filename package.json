@@ -33,7 +33,7 @@
   "devDependencies": {
     "@angular/compiler-cli": "^4.2.3",
     "@ngtools/webpack": "^1.4.1",
-    "@types/node": "^8.0.0",
+    "@types/node": "^8.0.1",
     "autoprefixer": "^7.1.1",
     "css-loader": "^0.28.3",
     "extract-text-webpack-plugin": "^2.1.2",
@@ -49,9 +49,9 @@
     "tslint": "^5.4.3",
     "typescript": "~2.3.3",
     "uglify-js": "^2.8.27",
-    "uglifyjs-webpack-plugin": "^0.4.4",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.5.0"
   },
   "browserslist": [
     "> 1%",
