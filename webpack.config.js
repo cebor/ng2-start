@@ -19,13 +19,13 @@ module.exports = function (env = {}) {
 
   let config = {
     entry: {
+      styles: [
+        './src/styles.css'
+      ],
       vendor: [
         'core-js/es6',
         'core-js/es7/reflect',
         'zone.js/dist/zone'
-      ],
-      styles: [
-        './src/styles.css'
       ],
       main: [
         './src/main.ts'
@@ -62,7 +62,12 @@ module.exports = function (env = {}) {
       }),
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
+        chunks: ['main'],
         minChunks: (module) => module.userRequest && module.userRequest.startsWith(nodeModules)
+      }),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'styles',
+        minChunks: Infinity
       }),
       new AotPlugin({
         tsConfigPath: './tsconfig.json',
