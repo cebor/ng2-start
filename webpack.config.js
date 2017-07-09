@@ -76,8 +76,7 @@ module.exports = function (env = {}) {
       }),
       new HtmlWebpackPlugin({
         template: './src/index.html'
-      }),
-      new webpack.optimize.ModuleConcatenationPlugin()
+      })
     ],
     devtool: !isProd ? 'source-map' : undefined,
     devServer: {
@@ -96,6 +95,7 @@ module.exports = function (env = {}) {
       }),
       include: [styles]
     });
+    config.plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
     config.plugins.push(new ExtractTextPlugin('[name].[chunkhash:7].css'));
     config.plugins.push(new UglifyJSPlugin());
   } else {
