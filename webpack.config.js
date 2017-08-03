@@ -61,7 +61,7 @@ module.exports = function (env = {}) {
         IS_PROD: JSON.stringify(isProd)
       }),
       new webpack.optimize.CommonsChunkPlugin({
-        name: 'styles',
+        name: 'inline',
         minChunks: Infinity
       }),
       new webpack.optimize.CommonsChunkPlugin({
@@ -75,7 +75,14 @@ module.exports = function (env = {}) {
         skipCodeGeneration: !aot
       }),
       new HtmlWebpackPlugin({
-        template: './src/index.html'
+        template: './src/index.html',
+        chunks: [
+          'inline',
+          'styles',
+          'vendor',
+          'main'
+        ],
+        chunksSortMode: 'manual'
       })
     ],
     devtool: !isProd ? 'source-map' : undefined,
