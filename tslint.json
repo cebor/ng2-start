@@ -5,11 +5,20 @@
   ],
   "jsRules": {},
   "rules": {
+    "arrow-parens": [
+      true,
+      "ban-single-arg-parens"
+    ],
+    "interface-name": [
+      false
+    ],
     "member-access": false,
     "no-console": [
       false
     ],
+    "no-string-literal": false,
     "object-literal-sort-keys": false,
+    "prefer-const": false,
     "quotemark": [
       true,
       "single",
@@ -17,8 +26,7 @@
     ],
     "trailing-comma": [
       false
-    ],
-    "prefer-const": false
+    ]
   },
   "rulesDirectory": []
 }
