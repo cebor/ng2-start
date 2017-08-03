@@ -10,9 +10,6 @@
       false
     ],
     "object-literal-sort-keys": false,
-    "ordered-imports": [
-      false
-    ],
     "quotemark": [
       true,
       "single",
@@ -20,7 +17,8 @@
     ],
     "trailing-comma": [
       false
-    ]
+    ],
+    "prefer-const": false
   },
   "rulesDirectory": []
 }
