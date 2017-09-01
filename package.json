@@ -46,7 +46,7 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "tslint": "^5.7.0",
-    "typescript": "~2.4.2",
+    "typescript": "~2.5.2",
     "uglify-js": "^3.0.28",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.5.5",
