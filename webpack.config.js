@@ -86,6 +86,10 @@ module.exports = function (env = {}) {
       })
     ],
     devtool: !isProd ? 'source-map' : undefined,
+    stats: {
+      children: false,
+      modules: false
+    },
     devServer: {
       port: 9000,
       contentBase: './src',
