@@ -17,20 +17,20 @@
     "test": "npm run lint"
   },
   "dependencies": {
-    "@angular/common": "^4.4.1",
-    "@angular/compiler": "^4.4.1",
-    "@angular/core": "^4.4.1",
-    "@angular/platform-browser": "^4.4.1",
-    "@angular/platform-browser-dynamic": "^4.4.1",
-    "@angular/router": "^4.4.1",
-    "@angular/upgrade": "^4.4.1",
+    "@angular/common": "^4.4.3",
+    "@angular/compiler": "^4.4.3",
+    "@angular/core": "^4.4.3",
+    "@angular/platform-browser": "^4.4.3",
+    "@angular/platform-browser-dynamic": "^4.4.3",
+    "@angular/router": "^4.4.3",
+    "@angular/upgrade": "^4.4.3",
     "core-js": "^2.5.1",
     "rxjs": "^5.4.3",
     "tslib": "^1.7.1",
     "zone.js": "^0.8.17"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^4.4.1",
+    "@angular/compiler-cli": "^4.4.3",
     "@ngtools/webpack": "^1.7.1",
     "@types/node": "^8.0.28",
     "autoprefixer": "^7.1.4",
