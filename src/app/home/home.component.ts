@@ -4,9 +4,4 @@ import { Component } from '@angular/core';
   selector: 'home',
   template: `This is the Home View!`
 })
-export class HomeComponent {
-  ngInit() {
-    let a = 1;
-
-  }
-}
+export class HomeComponent {}
