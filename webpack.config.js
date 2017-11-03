@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const { AotPlugin } = require('@ngtools/webpack');
+const { PurifyPlugin } = require('@angular-devkit/build-optimizer')
+const { AngularCompilerPlugin } = require('@ngtools/webpack');
 
 const path = require('path');
 
@@ -69,7 +70,7 @@ module.exports = function (env = {}) {
         chunks: ['main'],
         minChunks: (module) => module.userRequest && module.userRequest.startsWith(nodeModules)
       }),
-      new AotPlugin({
+      new AngularCompilerPlugin({
         tsConfigPath: './tsconfig.json',
         mainPath: './src/main.ts',
         skipCodeGeneration: !aot
@@ -106,6 +107,14 @@ module.exports = function (env = {}) {
       }),
       include: [styles]
     });
+    config.module.rules.push({
+      test: /\.js$/,
+      loader: '@angular-devkit/build-optimizer/webpack-loader',
+      options: {
+        sourceMap: false
+      }
+    });
+    config.plugins.push(new PurifyPlugin());
     config.plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
     config.plugins.push(new ExtractTextPlugin('[name].[chunkhash:7].css'));
     config.plugins.push(new UglifyJSPlugin());
