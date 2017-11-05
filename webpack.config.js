@@ -71,8 +71,8 @@ module.exports = function (env = {}) {
         minChunks: (module) => module.userRequest && module.userRequest.startsWith(nodeModules)
       }),
       new AngularCompilerPlugin({
-        tsConfigPath: './tsconfig.json',
-        mainPath: './src/main.ts',
+        tsConfigPath: './src/tsconfig.app.json',
+        mainPath: './main.ts',
         skipCodeGeneration: !aot
       }),
       new HtmlWebpackPlugin({
