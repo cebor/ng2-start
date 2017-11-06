@@ -14,6 +14,13 @@ const dist = root('dist');
 const nodeModules = root('node_modules');
 const styles = root('src', 'styles.css');
 
+const buildOptimizer = {
+  loader: "@angular-devkit/build-optimizer/webpack-loader",
+  options: {
+    sourceMap: false
+  }
+};
+
 module.exports = function (env = {}) {
   const isProd = !!env.prod;
   const aot = !!env.aot;
@@ -43,7 +50,12 @@ module.exports = function (env = {}) {
     },
     module: {
       rules: [
-        { test: /\.ts$/, use: ['@ngtools/webpack'], exclude: [/\.(spec|e2e)\.ts$/] },
+        // don't touch, must be on first position in array
+        {
+          test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
+          use: ['@ngtools/webpack'],
+          exclude: [/\.(spec|e2e)\.ts$/]
+        },
         { test: /\.html$/, use: ['raw-loader'] },
         { test: /\.css$/, use: ['raw-loader', 'postcss-loader'], exclude: [styles] },
         { test: /\.less$/, use: ['raw-loader', 'postcss-loader', 'less-loader'] },
@@ -107,13 +119,8 @@ module.exports = function (env = {}) {
       }),
       include: [styles]
     });
-    config.module.rules.push({
-      test: /\.js$/,
-      loader: '@angular-devkit/build-optimizer/webpack-loader',
-      options: {
-        sourceMap: false
-      }
-    });
+    config.module.rules[0].use.splice(0, 0, buildOptimizer);
+    config.module.rules.push(buildOptimizer);
     config.plugins.push(new PurifyPlugin());
     config.plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
     config.plugins.push(new ExtractTextPlugin('[name].[chunkhash:7].css'));
