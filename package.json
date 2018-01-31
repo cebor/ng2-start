@@ -30,7 +30,7 @@
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
-    "@angular-devkit/build-optimizer": "^0.0.42",
+    "@angular-devkit/build-optimizer": "^0.2.0",
     "@angular/compiler-cli": "^5.2.2",
     "@ngtools/webpack": "^1.9.6",
     "@types/node": "^9.4.0",
